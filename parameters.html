@@ -14,50 +14,45 @@
     // GET
     const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
 
-    const reliefApp = () => {
-        $.ajax({
-            url: apiURL,
-            method: 'GET',
-            dataType: 'json',
+        const reliefApp = () => {
+            $.ajax({
+                url: apiURL,
+                method: 'GET',
+                dataType: 'json',
 
-            data: {
-                "filter": {
-                    "field": "country",
-                    "value": "Haiti",
-                },
+                data: {
+                    "filter": {
+                        operator: 'AND',
+                        conditions: [
+                            {
+                                "field": "country",
+                                "value": "Sudan",
+                            },
+                            {
+                                "field": 'vulnerable_groups.id',
+                                "value": 6875
+                            }
+                        ]
+                    },
+                    "language": {
+                        "id": 267,
+                        "name": "English",
+                        "code": "en"
+                    },
 
-            //    "filter": {
-            //         "disaster_type": {
-            //             "name": "drought"
-            //         }
-            //     },
-
-                "language": {
-                    "id": 267,
-                    "name": "English",
-                    "code": "en"
+                    "query": {
+                        "value": 'analysis latest'
+                    }
                 }
 
-                // "fields": {
-                //     "type": {
-                //         "name": "drought"
-                //     }
-                // }
+            })
+                .then((res) => {
+                    console.log(res);
 
-                query: {
-                    value: 'drought'
-                }
-                
-            }
+                });
+        }
 
-        })
-        .then((res) => {
-            console.log(res);
-
-        });
-    }
-
-    reliefApp();
+        reliefApp();
 
     
     </script>
