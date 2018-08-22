@@ -8,10 +8,154 @@
 	<link rel="stylesheet" href="public/styles/style.css">
 </head>
 <body>
+		<header>
+			<nav>
+				<h3>Title of our App</h3>
+				<ul>
+					<li>About</li>
+					<li>Resoures</li>
+				</ul>
+			</nav>
+			<h1>Title of our App</h1>
+		</header>
 
-		<h1>It worked!</h1>
+		<section class="intro">
+			<h4>Intro-title</h4>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae itaque voluptatibus earum repellat pariatur id officia autem sapiente quia quidem quas amet, a modi quo vero blanditiis porro. Consequatur, enim!Nulla iure beatae ipsum non, nisi voluptatem accusantium omnis impedit totam laborum pariatur, qui porro! Rerum quidem deleniti animi tenetur! Omnis rem nemo, quidem consequuntur sit fuga sapiente perspiciatis eveniet?
+			</p>
+		</section>
 
+		<section class="search">
+			<h4>Search By</h4>
+			<form action="">
+				<fieldset class="countries">
+					<button class="countriesButton"></button>
+					<ul>
+						<li class="countryNames">Vanuatu</li>
+						<li class="countryNames">Tonga</li>
+						<li class="countryNames">Philippines</li>
+						<li class="countryNames">Guatemala</li>
+						<li class="countryNames">Bangladesh</li>
+						<li class="countryNames">Solomon Islands</li>
+						<li class="countryNames">Brunei</li>
+						<li class="countryNames">Costa Rica</li>
+						<li class="countryNames">Cambodia</li>
+						<li class="countryNames">Papua New Guinea</li>
+						<li class="countryNames">El Salvador</li>
+						<li class="countryNames">Timor-Leste</li>
+						<li class="countryNames">Mauritius</li>
+						<li class="countryNames">Nicaragua</li>
+						<li class="countryNames">Guinea-Bissau</li>
+						<li class="countryNames">Fiji</li>
+						<li class="countryNames">Japan</li>
+						<li class="countryNames">Vietnam</li>
+						<li class="countryNames">Gambia</li>
+						<li class="countryNames">Jamaica</li>
+						<li class="countryNames">Haiti</li>
+						<li class="countryNames">Chile</li>
+						<li class="countryNames">Benin</li>
+						<li class="countryNames">Guyana</li>
+						<li class="countryNames">Niger</li>
+						<li class="countryNames">Madagascar</li>
+						<li class="countryNames">Dominican Republic</li>
+						<li class="countryNames">Cameroon</li>
+						<li class="countryNames">Chad</li>
+						<li class="countryNames">Honduras</li>
+						<li class="countryNames">Cape Verde</li>
+						<li class="countryNames">Senegal</li>
+						<li class="countryNames">Togo</li>
+						<li class="countryNames">Djbouti</li>
+						<li class="countryNames">Burundi</li>
+						<li class="countryNames">Indonesia</li>
+						<li class="countryNames">Sierra Leone</li>
+					</ul>
+				</fieldset>
+				<fieldset class="vulnerableGroups">
+					<button class="vulnerableGroupButton"></button>
+					<ul>
+						<li class="vulnerableGroupNames">Aged Persons</li>
+						<li class="vulnerableGroupNames">Children</li>
+						<li class="vulnerableGroupNames">Internationally Displaced Persons (IDPs)</li>
+						<li class="vulnerableGroupNames">Persons with Disabilities</li>
+						<li class="vulnerableGroupNames">Refugees</li>
+						<li class="vulnerableGroupNames">Women</li>
+					</ul>
+				</fieldset>
+				<button class="submitSearch">Submit</button>
+			</form>
+
+		</section>
+
+	<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
 	<script src="public/scripts/main.js"></script>
+	<script>
+
+		// Save API URL
+		const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
+
+		// Relief App namespace
+		const app = {};
+
+		// Method to initialize events 
+		app.events = function(){
+
+		}
+		
+		// Method to GET disaster info
+		app.getDisasterInfo = () => {
+			$.ajax({
+				url: apiURL,
+				method: 'GET',
+				dataType: 'json',
+
+				data: {
+					"filter": {
+						operator: 'AND',
+						conditions: [
+							{
+								"field": "country",
+								"value": "Sudan",
+							},
+							{
+								"field": 'vulnerable_groups.id',
+								"value": 6875
+							}
+						]
+					},
+					"language": {
+						"id": 267,
+						"name": "English",
+						"code": "en"
+					},
+
+					"query": {
+						"value": 'analysis latest'
+					}
+				}
+
+			})
+				.then((res) => {
+					console.log(res);
+
+				});
+		}
+
+		// Init function to initialize app 
+		app.init = function(){
+			app.getDisasterInfo();
+			app.events();
+		}
+
+		// DOC READY
+		$(function(){
+			// Call init function
+			app.init();
+		})
+		
+
+
+	</script>
 </body>
 </html>
 
