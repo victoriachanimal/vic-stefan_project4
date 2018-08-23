@@ -7,6 +7,18 @@
     <title>Parameters</title>
 </head>
 <body>
+
+    <header>
+
+    </header>
+
+
+
+
+
+
+
+
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
 
     <script>
@@ -22,32 +34,28 @@
 
             data: {
                 "filter": {
-                    "field": "country",
-                    "value": "Haiti",
+                    operator: 'AND',
+                    conditions: [
+                        {
+                            "field": "country",
+                            "value": "Nicaragua",
+                        },
+                        {
+                            "field": "vulnerable_groups.id",
+                            "value": 6875
+                        }
+                    ]
                 },
-
-            //    "filter": {
-            //         "disaster_type": {
-            //             "name": "drought"
-            //         }
-            //     },
-
+                
                 "language": {
                     "id": 267,
                     "name": "English",
                     "code": "en"
-                }
+                },
 
-                // "fields": {
-                //     "type": {
-                //         "name": "drought"
-                //     }
-                // }
-
-                query: {
-                    value: 'drought'
+                "query": {
+                    "value": 'analysis latest'
                 }
-                
             }
 
         })
