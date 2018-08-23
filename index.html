@@ -194,7 +194,7 @@
 
 				<div class="country">
 					<label for="dominican republic">Dominican Republic
-						<input type="checkbox" class="countryNames" value="dominican republic>
+						<input type="checkbox" class="countryNames" value="dominican republic">
 					</label>
 				</div>
 
@@ -205,7 +205,7 @@
 				</div>
 
 				<div class="country">
-					<label for="chad">Chad</label>
+					<label for="chad">Chad
 						<input type="checkbox" class="countryNames" value="chad">
 					</label>
 				</div>
@@ -341,86 +341,84 @@
 
 				$(".submitSearch").on("click", function(e){
 					e.preventDefault();
-					if (searchCountryKey.length>0){
-						app.getDisasterInfo(searchCountryKey);
-					}
-					if (searchGroupKey.length>0){
-						app.getDisasterInfo1(searchGroupKey);
-					}
+					
+					app.getDisasterInfo(searchCountryKey)
+						.then((...disasterInfo) => {
+							
+							app.getDisasterInfo1(searchGroupKey);
+						})
+					
 
 				})
 			}
 
 			// Method to GET disaster info by Country
 			app.getDisasterInfo = (...query) => {
-				for(i=0;i<query.length;i++){
-				$.ajax({
-					url: apiURL,
-					method: 'GET',
-					dataType: 'json',
-					data: {
+				query = query.map((item) => {
+					return $.ajax({
+						url: apiURL,
+						method: 'GET',
+						dataType: 'json',
+						data: {
 
-						"filter": {
-							operator: 'AND',
-							conditions: [
-								{
-									"field": "country",
-									"value": query[i],
-								}
-							]
-						},
+							"filter": {
+								operator: 'AND',
+								conditions: [
+									{
+										"field": "country",
+										"value": item,
+									}
+								]
+							},
 
-						"language": {
-							"id": 267,
-							"name": "English",
-							"code": "en"
-						},
+							"language": {
+								"id": 267,
+								"name": "English",
+								"code": "en"
+							},
 
-						"query": {
-							"value": 'analysis latest'
-						}
-					}
-				})
-					.then((res) => {
-						resultsArray = res;
-					});
-			}
-			}
-
-	app.getDisasterInfo1 = (...query) => {
-		for (i = 0; i < query.length; i++) {
-			$.ajax({
-				url: apiURL,
-				method: 'GET',
-				dataType: 'json',
-				data: {
-
-					"filter": {
-						operator: 'AND',
-						conditions: [
-							{
-								"field": 'vulnerable_groups.id',
-								"value": query[i]
+							"query": {
+								"value": 'analysis latest'
 							}
-						]
-					},
+						}
+					})
+				})
+				console.log(res)
+				return $.when(query);
+			}
 
-					"language": {
-						"id": 267,
-						"name": "English",
-						"code": "en"
-					},
+			app.getDisasterInfo1 = (...query) => {
+					query = query.map((item) => {
+						return $.ajax({
+							url: apiURL,
+							method: 'GET',
+							dataType: 'json',
+							data: {
 
-					"query": {
-						"value": 'analysis latest'
-					}
+								"filter": {
+									operator: 'AND',
+									conditions: [
+										{
+											"field": 'vulnerable_groups.id',
+											"value": item
+										}
+									]
+								},
+
+								"language": {
+									"id": 267,
+									"name": "English",
+									"code": "en"
+								},
+
+								"query": {
+									"value": 'analysis latest'
+								}
+							}
+						})
+					})
+					return $.when(query);
 				}
-			})
-				.then((res) => {
-					$.merge()
-				});
-		}
-	}
 			
 
 
@@ -433,6 +431,7 @@
 
 			// DOC READY
 			$(function () {
+
 				// Call init function
 				app.init();
 				// delete
@@ -440,6 +439,4 @@
 
 		</script>
 	</body>
-	​
-
 	</html>
