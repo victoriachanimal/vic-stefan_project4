@@ -16,7 +16,7 @@
 				<h3>Title of our App</h3>
 				<ul>
 					<li>About</li>
-					<li>Resoures</li>
+					<li>Resources</li>
 				</ul>
 			</nav>
 			<h1>Title of our App</h1>
@@ -341,91 +341,88 @@
 
 				$(".submitSearch").on("click", function(e){
 					e.preventDefault();
-					if (searchCountryKey.length>0){
-						app.getDisasterInfo(searchCountryKey);
-					}
-					if (searchGroupKey.length>0){
-						app.getDisasterInfo1(searchGroupKey);
-					}
+					
+					 app.getDisasterInfo(searchCountryKey)
 
+						.then((...disasterInfo) => {
+							
+							app.getDisasterInfo1(searchGroupKey);
+							
+							(disasterInfo[0][0]).then((res) => {
+								console.log(res.data);
+							})
+
+						})	
 				})
 			}
 
 			// Method to GET disaster info by Country
 			app.getDisasterInfo = (...query) => {
-				for(i=0;i<query.length;i++){
-				$.ajax({
-					url: apiURL,
-					method: 'GET',
-					dataType: 'json',
-					data: {
+				query = query.map((item) => {
+					return $.ajax({
+						url: apiURL,
+						method: 'GET',
+						dataType: 'json',
+						data: {
 
-						"filter": {
-							operator: 'AND',
-							conditions: [
-								{
-									"field": "country",
-									"value": query[i],
-								}
-							]
-						},
+							"filter": {
+								operator: 'AND',
+								conditions: [
+									{
+										"field": "country",
+										"value": item,
+									}
+								]
+							},
 
-						"language": {
-							"id": 267,
-							"name": "English",
-							"code": "en"
-						},
+							"language": {
+								"id": 267,
+								"name": "English",
+								"code": "en"
+							},
 
-						"query": {
-							"value": 'analysis latest'
-						}
-					}
-				})
-					.then((res) => {
-						resultsArray = res;
-					});
-			}
-			}
-
-	app.getDisasterInfo1 = (...query) => {
-		for (i = 0; i < query.length; i++) {
-			$.ajax({
-				url: apiURL,
-				method: 'GET',
-				dataType: 'json',
-				data: {
-					"filter": {
-						operator: 'AND',
-						conditions: [
-							{
-
-								"field": "country",
-								"value": "Sudan"
+							"query": {
+								"value": 'analysis latest'
 							}
-						]
-					},
+						}
+					})
+				})
+				// console.log(res)
+				return $.when(query);
+			}
 
+			app.getDisasterInfo1 = (...query) => {
+					query = query.map((item) => {
+						return $.ajax({
+							url: apiURL,
+							method: 'GET',
+							dataType: 'json',
+							data: {
 
-					"language": {
-						"id": 267,
-						"name": "English",
-					},
-					"query": {
-						"value": 'analysis latest'
-					}
+								"filter": {
+									operator: 'AND',
+									conditions: [
+										{
+											"field": 'vulnerable_groups.id',
+											"value": item
+										}
+									]
+								},
+
+								"language": {
+									"id": 267,
+									"name": "English",
+									"code": "en"
+								},
+
+								"query": {
+									"value": 'analysis latest'
+								}
+							}
+						})
+					})
+					return $.when(query);
 				}
-			})
-				.then((res) => {
-
-					console.log(res);
-					console.log(resultsArray);
-					
-					const newArray = $.merge(res, resultsArray);
-
-					console.log(newArray);
-				});
-		}
-	}
 			
 
 
@@ -438,6 +435,7 @@
 
 			// DOC READY
 			$(function () {
+
 				// Call init function
 				app.init();
 				// delete
@@ -445,6 +443,4 @@
 
 		</script>
 	</body>
-	​
-
 	</html>
