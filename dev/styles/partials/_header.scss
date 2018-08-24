@@ -1,0 +1,47 @@
+// HEADER STYLES
+
+.headerNav {
+    border-bottom: 2.5px solid $thirdColor;
+    
+    .wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+h3 {
+    
+}
+
+.headerList {
+    display: flex;
+    flex-direction: row;
+    
+    // width: 70%;
+
+    li {
+        padding: 15px;
+    }
+}
+
+h1 {
+    text-align: center;
+    color: $accentColor;
+    padding: 50px 0 65px 0;
+}
+
+.title {
+    position: relative;
+}
+
+.iconContainer {
+    position: absolute;
+    top: 70px;
+    right: 195px;
+}
+
+.fa-leaf {
+    font-size: 65px;
+}

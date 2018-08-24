@@ -1,0 +1,80 @@
+// GLOBAL STYLES
+
+// variables
+$primaryColor: #333333;
+$secondaryColor: black;
+$thirdColor: #EBEBEB; 
+$accentColor: #D2113A;
+
+// Setup styles
+@import "partials/_setup.scss";
+
+// Header styles
+@import "partials/_header.scss";
+
+// Main Section styles 
+// (includes Section 1: Intro & Section 2: Search)
+@import "partials/_main.scss";
+
+
+// mixins
+@mixin primaryFont($fontSize) {
+    font-size: $fontSize * 1px;
+    font-size: ($fontSize / 10) * 1rem;
+    font-family: 'Cabin', sans-serif;
+} 
+
+@mixin secondaryFont($fontSize) {
+    font-size: $fontSize * 1px;
+    font-size: ($fontSize / 10) * 1rem;
+    font-family: 'Varela', sans-serif;
+}
+
+
+// general styles
+.wrapper {
+    max-width: 1280px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+// typography
+html {
+    font-size: 62.5%;
+    color: $primaryColor;
+}
+
+h1 {
+    @include primaryFont(45);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h3 {
+    @include primaryFont(18);
+    text-transform: uppercase;
+    color: $accentColor;
+}
+
+h4 {
+    @include primaryFont(23.5);
+    color: $secondaryColor;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+    @include primaryFont(15);
+}
+
+a {
+    text-decoration: none;
+    color: $primaryColor;
+}
+
+p {
+    @include secondaryFont(14.5);
+}

@@ -132,9 +132,96 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  background: green;
-  font-size: 10px;
+.headerNav {
+  border-bottom: 2.5px solid #EBEBEB; }
+  .headerNav .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; }
+
+.headerList {
+  display: flex;
+  flex-direction: row; }
+  .headerList li {
+    padding: 15px; }
+
+h1 {
+  text-align: center;
+  color: #D2113A;
+  padding: 50px 0 65px 0; }
+
+.title {
+  position: relative; }
+
+.iconContainer {
+  position: absolute;
+  top: 70px;
+  right: 195px; }
+
+.fa-leaf {
+  font-size: 65px; }
+
+.searchSection {
+  margin: 50px 0; }
+  .searchSection h4 {
+    padding: 20px 0; }
+
+.formBackground {
+  background-color: #EBEBEB; }
+
+form,
+fieldset {
+  background-color: white;
+  border: 1px solid white; }
+
+fieldset {
+  background: url(../assets/earth-globe-with-continents-maps.png);
+  background-size: contain; }
+
+.wrapper {
+  max-width: 1280px;
+  width: 80%;
+  margin: 0 auto; }
+
+html {
+  font-size: 62.5%;
+  color: #333333; }
+
+h1 {
+  font-size: 45px;
+  font-size: 4.5rem;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700; }
+
+h3 {
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-family: 'Cabin', sans-serif;
+  text-transform: uppercase;
+  color: #D2113A; }
+
+h4 {
+  font-size: 23.5px;
+  font-size: 2.35rem;
+  font-family: 'Cabin', sans-serif;
   color: black; }
+
+ul {
+  padding-left: 0; }
+
+li {
+  list-style: none;
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: 'Cabin', sans-serif; }
+
+a {
+  text-decoration: none;
+  color: #333333; }
+
+p {
+  font-size: 14.5px;
+  font-size: 1.45rem;
+  font-family: 'Varela', sans-serif; }
