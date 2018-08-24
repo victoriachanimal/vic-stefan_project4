@@ -339,21 +339,28 @@
 					};
 				})
 
-				$(".submitSearch").on("click", function(e){
+				$(".submitSearch").on("click", async function(e){
 					e.preventDefault();
+					const countryData=await app.getDisasterInfoCountries(searchCountryKey);
+					const groupData=await app.getDisasterInfoGroups(searchGroupKey);
+					console.log(countryData) 
+					$.when(
+						countryData[0],groupData[0]
+					).then(function(country, group){
+						console.log(country[0], group[0])
+
+
+
+						
+					})
 					
-					app.getDisasterInfo(searchCountryKey)
-						.then((...disasterInfo) => {
-							
-							app.getDisasterInfo1(searchGroupKey);
-						})
-					
+
 
 				})
 			}
 
 			// Method to GET disaster info by Country
-			app.getDisasterInfo = (...query) => {
+			app.getDisasterInfoCountries = (...query) => {
 				query = query.map((item) => {
 					return $.ajax({
 						url: apiURL,
@@ -368,7 +375,7 @@
 										"field": "country",
 										"value": item,
 									}
-								]
+								],
 							},
 
 							"language": {
@@ -377,18 +384,21 @@
 								"code": "en"
 							},
 
+							"limit": 1000,
+							"preset": "latest",
+
 							"query": {
 								"value": 'analysis latest'
 							}
 						}
 					})
 				})
-				console.log(res)
 				return $.when(query);
 			}
 
-			app.getDisasterInfo1 = (...query) => {
+			app.getDisasterInfoGroups = (...query) => {
 					query = query.map((item) => {
+						console.log(item)
 						return $.ajax({
 							url: apiURL,
 							method: 'GET',
@@ -410,6 +420,9 @@
 									"name": "English",
 									"code": "en"
 								},
+
+								"limit": 10,
+								"preset": "latest",
 
 								"query": {
 									"value": 'analysis latest'
