@@ -145,6 +145,12 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   flex-direction: row; }
   .headerList li {
     padding: 15px; }
+  .headerList a {
+    padding-bottom: 5px;
+    transition: all 0.3s; }
+    .headerList a:hover {
+      border-bottom: 2px solid black;
+      font-weight: 700; }
 
 h1 {
   text-align: center;
@@ -161,18 +167,37 @@ h1 {
 .fa-leaf {
   font-size: 65px; }
 
+.highlight {
+  font-weight: 700; }
+
 .searchSection {
-  margin: 50px 0; }
+  margin-top: 50px; }
   .searchSection h4 {
-    padding: 25px 0; }
+    padding-bottom: 25px; }
 
 .formBackground {
-  background-color: #EBEBEB; }
+  background: linear-gradient(#EBEBEB, white, #EBEBEB);
+  padding: 30px 0 70px 0; }
+
+form {
+  text-align: center;
+  padding-bottom: 20px;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
 
 form,
 fieldset {
   background-color: white;
   border: 1px solid white; }
+
+.formButtons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+
+.countriesButton,
+.vulnerableGroupButton {
+  width: 50%; }
 
 button {
   font-size: 16px;
@@ -183,14 +208,24 @@ button {
 
 .countriesButton {
   background-color: #D2113A;
-  border: 1px solid #D2113A;
+  border: 1.5px solid #D2113A;
   color: white;
   opacity: 0.85; }
+
+.countriesButton:hover,
+.submitSearch:hover {
+  background-color: #f15878;
+  border: 1.5px solid #f15878;
+  transition: all 0.3s; }
 
 .vulnerableGroupButton {
   background-color: #EBEBEB;
   border: 1.5px solid #D2113A;
   color: #D2113A; }
+  .vulnerableGroupButton:hover {
+    background-color: white;
+    border: 1.5px solid #f15878;
+    transition: all 0.3s; }
 
 .countryTable,
 .vulnerableGroupTable {
@@ -212,7 +247,8 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  padding: 0 10px; }
 
 .country input[type="checkbox"],
 .vulnerableGroup input[type="checkbox"] {
@@ -220,17 +256,14 @@ button {
   margin-left: 8px; }
   .country input[type="checkbox"]:checked + .checkmark:after,
   .vulnerableGroup input[type="checkbox"]:checked + .checkmark:after {
-    content: ""; }
+    content: "";
+    transition: all 1s; }
 
 .country label,
 .vulnerableGroup label {
   display: inline-block;
   position: relative;
   cursor: pointer; }
-  .country label:hover .checkmark:after,
-  .vulnerableGroup label:hover .checkmark:after {
-    content: "";
-    transition: all 1s; }
 
 .checkmark:before {
   content: "";
@@ -259,7 +292,33 @@ button {
   background-color: #D2113A;
   border: 1px solid #D2113A;
   color: white;
-  opacity: 0.85; }
+  opacity: 0.85;
+  margin: 0 auto; }
+
+footer {
+  background-color: #333333;
+  padding: 1px 0; }
+  footer p {
+    color: #EBEBEB;
+    padding: 0 25px; }
+  footer a {
+    color: #D2113A;
+    font-size: 20px;
+    padding: 0 10px; }
+    footer a:hover {
+      color: #f15878;
+      transition: color 0.3s; }
+
+.footerInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.footerSocial {
+  display: flex;
+  flex-direction: row;
+  padding: 0 25px; }
 
 .wrapper {
   max-width: 1280px;

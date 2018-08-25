@@ -11,18 +11,21 @@
     }
 }
 
-h3 {
-    
-}
-
 .headerList {
     display: flex;
     flex-direction: row;
-    
-    // width: 70%;
 
     li {
         padding: 15px;
+    }
+
+    a {
+        padding-bottom: 5px;
+        transition: all 0.3s;
+        &:hover {
+            border-bottom: 2px solid black;
+            font-weight: 700;
+        }
     }
 }
 
@@ -33,17 +36,6 @@ h1 {
     position: relative;
 }
 
-// h1::after {
-//     font-family: 'Font Awesome\ 5 Free';
-//     font-weight: 900;
-//     content: "\f06c";
-//     display: inline-block;
-//     position: absolute;
-//     color: $primaryColor;
-//     right: 200px;
-//     top: 60px;
-// }
-
 .title {
     display: flex;
     flex-direction: row;
@@ -53,4 +45,8 @@ h1 {
 
 .fa-leaf {
     font-size: 65px;
+}
+
+.highlight {
+    font-weight: 700;
 }
