@@ -30,16 +30,25 @@ h1 {
     text-align: center;
     color: $accentColor;
     padding: 50px 0 65px 0;
-}
-
-.title {
     position: relative;
 }
 
-.iconContainer {
-    position: absolute;
-    top: 70px;
-    right: 195px;
+// h1::after {
+//     font-family: 'Font Awesome\ 5 Free';
+//     font-weight: 900;
+//     content: "\f06c";
+//     display: inline-block;
+//     position: absolute;
+//     color: $primaryColor;
+//     right: 200px;
+//     top: 60px;
+// }
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .fa-leaf {

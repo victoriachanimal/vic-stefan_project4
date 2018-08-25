@@ -149,15 +149,14 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 h1 {
   text-align: center;
   color: #D2113A;
-  padding: 50px 0 65px 0; }
-
-.title {
+  padding: 50px 0 65px 0;
   position: relative; }
 
-.iconContainer {
-  position: absolute;
-  top: 70px;
-  right: 195px; }
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
 .fa-leaf {
   font-size: 65px; }
@@ -165,7 +164,7 @@ h1 {
 .searchSection {
   margin: 50px 0; }
   .searchSection h4 {
-    padding: 20px 0; }
+    padding: 25px 0; }
 
 .formBackground {
   background-color: #EBEBEB; }
@@ -175,9 +174,92 @@ fieldset {
   background-color: white;
   border: 1px solid white; }
 
-fieldset {
-  background: url(../assets/earth-globe-with-continents-maps.png);
-  background-size: contain; }
+button {
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: 'Cabin', sans-serif;
+  width: 135px;
+  height: 50px; }
+
+.countriesButton {
+  background-color: #D2113A;
+  border: 1px solid #D2113A;
+  color: white;
+  opacity: 0.85; }
+
+.vulnerableGroupButton {
+  background-color: #EBEBEB;
+  border: 1.5px solid #D2113A;
+  color: #D2113A; }
+
+.countryTable,
+.vulnerableGroupTable {
+  padding: 15px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 10px;
+  justify-content: center;
+  align-content: center; }
+
+.countryTable {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+.vulnerableGroupTable {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+.country,
+.vulnerableGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+
+.country input[type="checkbox"],
+.vulnerableGroup input[type="checkbox"] {
+  opacity: 0;
+  margin-left: 8px; }
+  .country input[type="checkbox"]:checked + .checkmark:after,
+  .vulnerableGroup input[type="checkbox"]:checked + .checkmark:after {
+    content: ""; }
+
+.country label,
+.vulnerableGroup label {
+  display: inline-block;
+  position: relative;
+  cursor: pointer; }
+  .country label:hover .checkmark:after,
+  .vulnerableGroup label:hover .checkmark:after {
+    content: "";
+    transition: all 1s; }
+
+.checkmark:before {
+  content: "";
+  display: inline-block;
+  height: 13.5px;
+  width: 13.5px;
+  border: 1.5px solid black;
+  position: absolute;
+  top: -1.5px;
+  left: 6px; }
+
+.checkmark:after {
+  content: none;
+  display: inline-block;
+  height: 5px;
+  width: 9.5px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 8.5px;
+  top: 1px;
+  color: #D2113A; }
+
+.submitSearch {
+  background-color: #D2113A;
+  border: 1px solid #D2113A;
+  color: white;
+  opacity: 0.85; }
 
 .wrapper {
   max-width: 1280px;

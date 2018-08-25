@@ -6,17 +6,6 @@ $secondaryColor: black;
 $thirdColor: #EBEBEB; 
 $accentColor: #D2113A;
 
-// Setup styles
-@import "partials/_setup.scss";
-
-// Header styles
-@import "partials/_header.scss";
-
-// Main Section styles 
-// (includes Section 1: Intro & Section 2: Search)
-@import "partials/_main.scss";
-
-
 // mixins
 @mixin primaryFont($fontSize) {
     font-size: $fontSize * 1px;
@@ -29,6 +18,16 @@ $accentColor: #D2113A;
     font-size: ($fontSize / 10) * 1rem;
     font-family: 'Varela', sans-serif;
 }
+
+// Setup styles
+@import "partials/_setup.scss";
+
+// Header styles
+@import "partials/_header.scss";
+
+// Main Section styles 
+// (includes Section 1: Intro & Section 2: Search)
+@import "partials/_main.scss";
 
 
 // general styles
