@@ -1,0 +1,41 @@
+// ABOUT PAGE AND RESOURCES PAGE STYLES
+
+
+// About Page styles (about.html)
+.aboutSection {
+    padding-bottom: 60px;
+
+    p:last-child {
+        margin-top: 35px;
+    }
+}
+
+#reliefWeb,
+.developers {
+    color: grey;
+
+    &:hover {
+        color: lighten(grey, 10);
+        transition: color 0.3s;
+    }
+}
+
+
+// Resources Page styles (resources.html)
+.resourcesSection {
+    padding-bottom: 60px;
+
+    li {
+        list-style: disc;
+        line-height: 2.5;
+    }
+
+    a {
+        &:hover {
+            color: lighten(grey, 10);
+            transition: color 0.3s;
+        }
+    }
+}
+
+

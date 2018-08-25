@@ -1,0 +1,103 @@
+// RESPONSIVE STYLES
+
+/* Landscape Phone to Portrait Tablet */
+@media (max-width: 760px) {
+
+    // HEADER
+    .headerNav {
+        h3 {
+            display: none;
+        }
+
+        .wrapper {
+            justify-content: center;
+        }
+    }
+
+    .title {
+        h1 {
+            @include primaryFont(35);
+            padding-bottom: 30px;
+         }
+    }
+
+    .fa-parachute-box {
+        font-size: 50px;
+        margin-top: 27px;
+    }
+    // END OF HEADER
+
+    // MAIN
+    .searchSection {
+        .countryTable,
+        .vulnerableGroupTable {
+            padding: 5px;
+            grid-gap: 0;
+        }
+    }
+    // END OF MAIN
+}
+
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+    // HEADER
+    .headerList {
+        li {
+            @include primaryFont(13.5);
+        }
+    }
+
+    .title {
+
+        h1 {
+            @include primaryFont(28);
+            padding: 15px 0 0 0;
+        }
+
+        .fa-parachute-box {
+            font-size: 30px;
+            margin-left: 5px;
+            margin-top: 60px;
+        }
+    }
+    // END OF HEADER
+
+    // MAIN (for Home, About and Resources pages)
+    .introSection,
+    .searchSection,
+    .aboutSection,
+    .resourcesSection {
+        h4 {
+            @include primaryFont(18);
+        }
+
+        p {
+            @include secondaryFont(12);
+        }   
+    }
+
+    .searchSection {
+        .countryTable {
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+
+        .vulnerableGroupTable {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .country,
+        .vulnerableGroup {
+            justify-content: flex-start;
+            padding: 5px;
+        }
+    }
+
+    .resourcesSection {
+        li {    
+            @include primaryFont(12.5);
+        }   
+    }
+    // END OF MAIN
+}

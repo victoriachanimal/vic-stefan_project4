@@ -7,7 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 		<!-- Webpage Title -->
-		<title>Project 4</title>
+		<title>Project 4 - Home</title>
 
 		<!-- Google Fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Varela" rel="stylesheet">
@@ -17,7 +17,7 @@
 		 crossorigin="anonymous">
 
 		<!-- CSS Stylesheet -->
-		<link rel="stylesheet" href="public/styles/style.css">
+		<link rel="stylesheet" href="public/styles/style.css" type="text/css">
 	</head>
 	<body>
 		<!-- HEADER -->
@@ -26,18 +26,19 @@
 				<div class="wrapper">
 					<h3>Title of our App</h3>
 					<ul class="headerList">
-						<li><a href="#">About</a></li>
-						<li><a href="#">Resources</a></li>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="resources.html">Resources</a></li>
 						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
 					</ul>
-		
 				</div>
 			</nav>
+
 			<div class="title wrapper">
 				<h1>Title of our App</h1>
 				<div class="iconContainer">
-					<i class="fas fa-leaf"></i>
+					<i class="fas fa-parachute-box"></i>
 				</div>
 			</div>
 		</header>
@@ -47,7 +48,7 @@
 		<main>
 			<!-- SECTION 1: INTRO  -->
 			<section class="introSection wrapper">
-				<h4>How to use</h4>
+				<h4>How to Use</h4>
 
 				<p>"Title of our App" provides users with a go-to-resource to search key information and articles on natural disasters happening in 37 of the world's most high-risk countries.</p>
 				<p>Specify your search below based on <span class="highlight">country</span> and <span class="highlight">vulnerable group</span>, and the app will return real-time data, as well as charities and organizations involved in providing emergency and disaster relief for each given location.</p>
@@ -72,7 +73,7 @@
 						<!-- Form Part 1: Choose Countries -->
 						<fieldset class="countries">
 							
-							<div class="countryTable hidden visible">
+							<div class="countryTable">
 								<div class="country">
 									<p>Bangladesh</p>
 									<label for="bangladesh">
@@ -366,10 +367,9 @@
 
 						<!-- Form Part 2: Choose Vulnerable Groups -->
 						<fieldset class="vulnerableGroups">
-
 							<!-- <button class="vulnerableGroupButton">Vulnerable Groups</button> -->
 
-							<div class="vulnerableGroupTable hidden visible">
+							<div class="vulnerableGroupTable">
 								<div class="vulnerableGroup">
 									<p>Aged Persons</p>
 									<label for="6870">
@@ -449,11 +449,15 @@
 		<script>
 			// Save API URL
 			const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
+
 			// Relief App namespace
 			const app = {};
+
 			const searchGroupKey = [];
 			const searchCountryKey = [];
 			let resultsArray = [];
+
+
 			// Method to initialize events 
 			app.events = function () {
 

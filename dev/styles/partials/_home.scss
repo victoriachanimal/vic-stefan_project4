@@ -1,5 +1,4 @@
-// MAIN STYLES
-
+// HOMEPAGE STYLES
 
 // SECTION 2: SEARCH STYLES
 .searchSection {
@@ -11,7 +10,7 @@
 }
 
 .formBackground {
-     background: linear-gradient($thirdColor, white, $thirdColor);
+    background: linear-gradient($thirdColor, white, $thirdColor);
     padding: 30px 0 70px 0;
 }
 
@@ -85,7 +84,6 @@ button {
 
 .countryTable {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    
 }
 
 .vulnerableGroupTable {
@@ -99,6 +97,7 @@ button {
     align-items: center;
     justify-content: flex-start;
     padding: 0 10px;
+    justify-self: center;
 }
 
 .country input[type="checkbox"],
@@ -150,6 +149,7 @@ button {
     color: white;
     opacity: 0.85;
     margin: 0 auto;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 // END OF SECTION 2: SEARCH STYLES
