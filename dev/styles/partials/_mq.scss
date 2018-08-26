@@ -22,8 +22,15 @@
     }
 
     .fa-parachute-box {
-        font-size: 50px;
+        font-size: 40px;
         margin-top: 27px;
+    }
+
+    .earth {
+        width: 80px;
+        height: 80px;
+        top: 20px;
+        left: -10px;
     }
     // END OF HEADER
 
@@ -58,8 +65,14 @@
 
         .fa-parachute-box {
             font-size: 30px;
-            margin-left: 5px;
-            margin-top: 60px;
+            left: -10px;
+            
+        }
+
+        .earth {
+            width: 55px;
+            height: 55px;
+            top: 15px;   
         }
     }
     // END OF HEADER
@@ -95,6 +108,7 @@
     }
 
     .resourcesSection {
+        padding-top: 40px;
         li {    
             @include primaryFont(12.5);
         }   

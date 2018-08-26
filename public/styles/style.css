@@ -164,9 +164,26 @@ h1 {
   justify-content: center;
   align-items: center; }
 
+header {
+  background: url(./earth.svg); }
+
+.iconContainer {
+  position: relative; }
+
 .fa-parachute-box {
+  position: absolute;
   font-size: 65px;
-  margin-left: 15px; }
+  top: -30px;
+  margin-left: 15px;
+  z-index: 20; }
+
+.earth {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 10;
+  top: 0;
+  left: -25px; }
 
 .highlight {
   font-weight: 700; }
@@ -320,6 +337,20 @@ button {
     color: #9a9a9a;
     transition: color 0.3s; }
 
+.resourcesFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 1px; }
+
+.resultsSection {
+  background: linear-gradient(#EBEBEB, white, #EBEBEB); }
+
+.results {
+  background: white;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+
 footer {
   background-color: #333333;
   padding: 1px 0; }
@@ -357,8 +388,13 @@ footer {
     font-family: 'Cabin', sans-serif;
     padding-bottom: 30px; }
   .fa-parachute-box {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 27px; }
+  .earth {
+    width: 80px;
+    height: 80px;
+    top: 20px;
+    left: -10px; }
   .searchSection .countryTable,
   .searchSection .vulnerableGroupTable {
     padding: 5px;
@@ -377,8 +413,11 @@ footer {
     padding: 15px 0 0 0; }
   .title .fa-parachute-box {
     font-size: 30px;
-    margin-left: 5px;
-    margin-top: 60px; }
+    left: -10px; }
+  .title .earth {
+    width: 55px;
+    height: 55px;
+    top: 15px; }
   .introSection h4,
   .searchSection h4,
   .aboutSection h4,
@@ -401,10 +440,12 @@ footer {
   .searchSection .vulnerableGroup {
     justify-content: flex-start;
     padding: 5px; }
-  .resourcesSection li {
-    font-size: 12.5px;
-    font-size: 1.25rem;
-    font-family: 'Cabin', sans-serif; } }
+  .resourcesSection {
+    padding-top: 40px; }
+    .resourcesSection li {
+      font-size: 12.5px;
+      font-size: 1.25rem;
+      font-family: 'Cabin', sans-serif; } }
 
 .wrapper {
   max-width: 1280px;
