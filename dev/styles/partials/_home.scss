@@ -155,8 +155,8 @@ button {
 // END OF SECTION 2: SEARCH STYLES
 
 
-// SECTION 3: *RESULTS*
-// Results Page styles (results.html)
+// SECTION 3: * RESULTS *
+// Results Page styles (located in home.html)
 .resultsSection {
     background: linear-gradient($thirdColor, white, $thirdColor);
     padding: 20px 0 50px 0;
@@ -222,4 +222,4 @@ button {
     @include primaryFont(15);
     font-weight: 400;   
 }
-// END OF SECTION 3: RESULTS
+// END OF SECTION 3: * RESULTS *
