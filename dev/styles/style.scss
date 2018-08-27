@@ -86,3 +86,11 @@ p {
     @include secondaryFont(14.5);
     line-height: 1.5;
 }
+
+.highlight {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}

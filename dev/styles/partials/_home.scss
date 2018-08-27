@@ -153,3 +153,73 @@ button {
 }
 
 // END OF SECTION 2: SEARCH STYLES
+
+
+// SECTION 3: *RESULTS*
+// Results Page styles (results.html)
+.resultsSection {
+    background: linear-gradient($thirdColor, white, $thirdColor);
+    padding: 20px 0 50px 0;
+    margin-top: 50px;
+
+    h5 {
+        @include primaryFont(18);
+        color: $accentColor;
+        font-weight: 400;
+    }
+
+    h6 {
+        @include primaryFont(15);
+        font-weight: 400;
+        margin: 12px 0;
+    }
+
+}
+
+.resultsHeadings {
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.back a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 5px;
+
+    &:hover {
+        color: lighten($primaryColor, 30);
+        transition: all 0.3s;
+    }
+
+    .fa-long-arrow-alt-left{
+        font-size: 25px;
+    }
+
+    h6 {
+        margin-left: 10px;
+    }
+}
+
+.results {
+    padding: 15px 30px;
+    background: white;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+
+.resultListItem {
+    padding-bottom: 10px;
+}
+
+.vulnerableGroupHeading {
+    color: gray;
+}
+
+.charities {
+    @include primaryFont(15);
+    font-weight: 400;   
+}
+// END OF SECTION 3: RESULTS
