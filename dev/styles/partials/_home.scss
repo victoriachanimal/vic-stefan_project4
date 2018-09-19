@@ -253,4 +253,30 @@ button {
     @include primaryFont(15);
     font-weight: 400;   
 }
+
+
+// READ MORE
+.articleTitle {
+    text-align: left;
+    @include primaryFont(15);
+    padding-top: 25px;
+}
+
+.articleLink {
+    color: gray;
+    transition: 0.3s ease-in-out all;
+
+    &:hover {
+        color: lightgray;
+    }
+}
+
+.readMore {
+    transition: 0.3s ease-in-out all;
+    &:hover {
+        background: white;
+        border: 1px solid gray;
+    }
+}
+
 // END OF SECTION 3: * RESULTS *

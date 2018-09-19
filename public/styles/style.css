@@ -376,6 +376,25 @@ button {
   font-family: 'Cabin', sans-serif;
   font-weight: 400; }
 
+.articleTitle {
+  text-align: left;
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: 'Cabin', sans-serif;
+  padding-top: 25px; }
+
+.articleLink {
+  color: gray;
+  transition: 0.3s ease-in-out all; }
+  .articleLink:hover {
+    color: lightgray; }
+
+.readMore {
+  transition: 0.3s ease-in-out all; }
+  .readMore:hover {
+    background: white;
+    border: 1px solid gray; }
+
 .aboutSection {
   padding-bottom: 60px; }
   .aboutSection p:last-child {
@@ -593,3 +612,6 @@ p {
 
 img {
   width: 100%; }
+
+.id {
+  font-size: 0; }
