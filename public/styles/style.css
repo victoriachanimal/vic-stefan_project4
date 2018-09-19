@@ -139,6 +139,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
+  .headerNav .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+  .headerNav .iconContainer {
+    position: relative;
+    margin-left: 10px; }
+  .headerNav .fa-parachute-box {
+    position: absolute;
+    font-size: 25px;
+    top: -25px;
+    margin-left: 10px;
+    z-index: 20; }
+  .headerNav .earthIcon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+    top: -15px;
+    left: 0; }
+    .headerNav .earthIcon img {
+      width: 100%; }
 
 .headerList {
   display: flex;
@@ -152,38 +174,28 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
       border-bottom: 2px solid black;
       font-weight: 700; }
 
-h1 {
-  text-align: center;
-  color: #D2113A;
-  padding: 50px 0 65px 0;
-  position: relative; }
-
 .title {
+  display: none; }
+
+.introRows {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center; }
+  align-items: flex-start;
+  justify-content: flex-start; }
+  .introRows p {
+    width: calc(33.3% - (30px / 3));
+    margin: 0; }
+  .introRows p:nth-of-type(2) {
+    margin: 0 15px; }
 
-header {
-  background: url(./earth.svg); }
-
-.iconContainer {
-  position: relative; }
-
-.fa-parachute-box {
-  position: absolute;
-  font-size: 65px;
-  top: -30px;
-  margin-left: 15px;
-  z-index: 20; }
-
-.earth {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  z-index: 10;
-  top: 0;
-  left: -25px; }
+.down {
+  margin: 25px 0 10px 0;
+  font-size: 35px;
+  text-align: center; }
+  .down a {
+    transition: 0.3s ease all; }
+    .down a:hover {
+      color: gray; }
 
 .searchSection {
   margin-top: 50px; }
@@ -248,8 +260,7 @@ button {
   margin: 0 auto;
   display: grid;
   grid-gap: 10px;
-  justify-content: center;
-  align-content: center; }
+  align-items: start; }
 
 .countryTable {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
@@ -262,9 +273,8 @@ button {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   padding: 0 10px;
-  justify-self: center; }
+  justify-self: flex-start; }
 
 .country input[type="checkbox"],
 .vulnerableGroup input[type="checkbox"] {
@@ -279,7 +289,8 @@ button {
 .vulnerableGroup label {
   display: inline-block;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-right: 8px; }
 
 .checkmark:before {
   content: "";
@@ -421,23 +432,45 @@ footer {
 
 /* Landscape Phone to Portrait Tablet */
 @media (max-width: 760px) {
-  .headerNav h3 {
-    display: none; }
   .headerNav .wrapper {
     justify-content: center; }
-  .title h1 {
-    font-size: 35px;
-    font-size: 3.5rem;
-    font-family: 'Cabin', sans-serif;
-    padding-bottom: 30px; }
-  .fa-parachute-box {
-    font-size: 40px;
-    margin-top: 27px; }
-  .earth {
-    width: 80px;
-    height: 80px;
-    top: 20px;
-    left: -10px; }
+  .headerNav .logo {
+    display: none; }
+  header .title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; }
+    header .title .iconContainer2 {
+      position: relative; }
+    header .title h1 {
+      font-size: 30px;
+      font-size: 3rem;
+      font-family: 'Cabin', sans-serif;
+      text-align: center;
+      margin: 40px 0 20px 0;
+      color: #D2113A; }
+    header .title .fa-parachute-box {
+      font-size: 33px;
+      position: absolute;
+      top: -25px;
+      right: -65px;
+      z-index: 100; }
+    header .title .earthIcon {
+      position: absolute;
+      width: 75px;
+      height: 75px;
+      top: -10px;
+      right: -80px; }
+  .introSection h4 {
+    margin-bottom: 15px; }
+  .introRows {
+    flex-direction: column; }
+    .introRows p {
+      width: 100%;
+      margin: 20px 0; }
+    .introRows p:nth-of-type(2) {
+      margin: 0; }
   .searchSection .countryTable,
   .searchSection .vulnerableGroupTable {
     padding: 5px;
@@ -449,24 +482,31 @@ footer {
     font-size: 13.5px;
     font-size: 1.35rem;
     font-family: 'Cabin', sans-serif; }
-  .title h1 {
-    font-size: 28px;
-    font-size: 2.8rem;
+  header .title h1 {
+    font-size: 25px;
+    font-size: 2.5rem;
     font-family: 'Cabin', sans-serif;
-    padding: 15px 0 0 0; }
-  .title .fa-parachute-box {
-    font-size: 30px;
-    left: -10px; }
-  .title .earth {
-    width: 55px;
-    height: 55px;
-    top: 15px; }
+    padding: 15px 0 0 0;
+    margin-top: 10px; }
+  header .title .fa-parachute-box {
+    font-size: 20px;
+    right: -45px;
+    top: -15px; }
+  header .title .earthIcon {
+    width: 50px;
+    height: 50px;
+    right: -55px;
+    top: -5px; }
+  .introSection h4 {
+    margin: 0; }
+  .introSection .down {
+    margin: 0px; }
   .introSection h4,
   .searchSection h4,
   .aboutSection h4,
   .resourcesSection h4 {
-    font-size: 18px;
-    font-size: 1.8rem;
+    font-size: 16px;
+    font-size: 1.6rem;
     font-family: 'Cabin', sans-serif; }
   .introSection p,
   .searchSection p,
@@ -488,7 +528,13 @@ footer {
     .resourcesSection li {
       font-size: 12.5px;
       font-size: 1.25rem;
-      font-family: 'Cabin', sans-serif; } }
+      font-family: 'Cabin', sans-serif; }
+  footer p {
+    font-size: 10.5px;
+    font-size: 1.05rem;
+    font-family: 'Varela', sans-serif; }
+  footer a {
+    font-size: 12.5px; } }
 
 .wrapper {
   max-width: 1280px;
@@ -517,7 +563,8 @@ h4 {
   font-size: 23.5px;
   font-size: 2.35rem;
   font-family: 'Cabin', sans-serif;
-  color: black; }
+  color: black;
+  text-align: center; }
 
 ul {
   padding-left: 0; }
@@ -536,10 +583,13 @@ p {
   font-size: 14.5px;
   font-size: 1.45rem;
   font-family: 'Varela', sans-serif;
-  line-height: 1.5; }
+  line-height: 1.6; }
 
 .highlight {
   font-weight: 700; }
 
 .italic {
   font-style: italic; }
+
+img {
+  width: 100%; }

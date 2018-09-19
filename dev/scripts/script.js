@@ -1,12 +1,12 @@
-// Save API URL
-const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
+ // Relief App variables 
+const app = {}; // *empty namespace
 
-// Relief App variables 
-const app = {};
+const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
 const searchGroupKey = [];
 const searchCountryKey = [];
 let resultsData = [];
 let finalResults = [];
+
 
 // Charity variables
 const charities = [
@@ -222,14 +222,14 @@ app.events = function () {
         const countryNameInput = $(this).val();
         if ($(this).is(':checked')) {
             searchCountryKey.push(countryNameInput);
-            //Allow user to remove country from array 
+            // Allow user to remove country from array 
         } else {
             const removeCountryName = searchCountryKey.indexOf(countryNameInput);
             return searchCountryKey.splice(removeCountryName, 1);
         }
     });
 
-    //Save vulnerable groups the user clicks to an array
+    // Save vulnerable groups the user clicks to an array
     $('.vulnerableGroupNames').on('change', function () {
         const vulnerableGroupInput = $(this).val();
         if ($(this).is(':checked')) {
@@ -241,25 +241,25 @@ app.events = function () {
         };
     })
 
-    //Listen for when submit button is clicked to get their results
+    // Listen for when submit button is clicked to get their results
     $(".submitSearch").on("click", async function (e) {
         //prevent default of submit button
         e.preventDefault();
 
-        // hide Search Section and show Results Section
+        // Hide Search Section and show Results Section
         $('.searchSection').hide();
         $('.resultsSection').show();
 
-        //make ajax request to get data based on users queries and save that to a variable
+        // Make ajax request to get data based on users queries and save that to a variable
         const countryData = await app.getDisasterInfoCountries(searchCountryKey);
-        //Once data is recieved back continue
+        // Once data is recieved back continue
         $.when(
             countryData[0]
-            //Take the results of ajax request and manipulate it
+            // Take the results of ajax request and manipulate it
         ).then(function (country) {
             const resultsData = (country.data);
 
-            //Iterate through each result to save results into a more accessible array
+            // Iterate through each result to save results into a more accessible array
             for (let i = 0; i < resultsData.length; i++) {
                 //Create object in the array that will hold all the properties for that disaster
                 var disasterName = resultsData[i].fields.disaster[0].name;
@@ -279,7 +279,7 @@ app.events = function () {
                 finalResults[i].vulnerableGroups = vulnerableGroups;
             };
 
-            //create function that will remove duplicate disasters from Array
+            // Create function that will remove duplicate disasters from Array
             function removeDuplicates(originalArray, prop) {
                 var finalResults = [];
                 var lookupObject = {};
@@ -321,7 +321,7 @@ app.events = function () {
         })
     })
 
-    //Create a read more button that will generate articles for the given disaster
+    // Create a read more button that will generate articles for the given disaster
     $(".readMore").on("click", async function (e) {
         e.preventDefault();
         const getArticles = await app.getArticles("Indonesia: Earthquakes - Jul 2018");
@@ -332,7 +332,7 @@ app.events = function () {
         })
     })
 }
-// end of app.events funcion
+// End of app.events funcion
 
 // Method to GET disaster info by Country
 app.getDisasterInfoCountries = (...query) => {
@@ -390,10 +390,11 @@ app.getDisasterInfoCountries = (...query) => {
             }
         })
     })
+
     return $.when(query);
 }
 
-//Method to get Articles by the disaster name
+// Method to get Articles by disaster name
 app.getArticles = (disaster) => {
     articles = $.ajax({
         url: apiURL,
@@ -439,12 +440,12 @@ app.getArticles = (disaster) => {
             }
         }
     })
+
     return $.when(articles);
 }
 
 // Init function to initialize app 
-app.init = function () {
-
+app.init = function() {
     // Default Search Form Features:
     // Initially hide "Vulnerable Groups" checkboxes until user clicks on Vulnerable Groups button
     $('.vulnerableGroupTable').hide();
@@ -455,6 +456,11 @@ app.init = function () {
     $('form')[0].reset();
 
     app.events();
+
+    app.getDisasterInfoCountries();
+
+    app.getArticles();
+
 }
 
 // DOC READY
@@ -462,5 +468,5 @@ $(function () {
 
     // Call init function
     app.init();
-    // delete
+
 })

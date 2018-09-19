@@ -1,5 +1,4 @@
 // GLOBAL STYLES
-
 // variables
 $primaryColor: #333333;
 $secondaryColor: black;
@@ -66,6 +65,7 @@ h3 {
 h4 {
     @include primaryFont(23.5);
     color: $secondaryColor;
+    text-align: center;
 }
 
 ul {
@@ -84,7 +84,7 @@ a {
 
 p {
     @include secondaryFont(14.5);
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .highlight {
@@ -93,4 +93,8 @@ p {
 
 .italic {
     font-style: italic;
+}
+
+img {
+    width: 100%;
 }
