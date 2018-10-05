@@ -1,14 +1,5 @@
-// (function () { function r(e, n, t) { function o(i, f) { if (!n[i]) { if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a } var p = n[i] = { exports: {} }; e[i][0].call(p.exports, function (r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t) } return n[i].exports } for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)o(t[i]); return o } return r })()({
-//     1: [function (require, module, exports) {
-//         "use strict";
-
-//     }, {}]
-// }, {}, [1])
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uLy4uL25vZGVfbW9kdWxlcy9icm93c2VyLXBhY2svX3ByZWx1ZGUuanMiLCJkZXYvc2NyaXB0cy9tYWluLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0FDQUE7QUFDQSIsImZpbGUiOiJnZW5lcmF0ZWQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlc0NvbnRlbnQiOlsiKGZ1bmN0aW9uKCl7ZnVuY3Rpb24gcihlLG4sdCl7ZnVuY3Rpb24gbyhpLGYpe2lmKCFuW2ldKXtpZighZVtpXSl7dmFyIGM9XCJmdW5jdGlvblwiPT10eXBlb2YgcmVxdWlyZSYmcmVxdWlyZTtpZighZiYmYylyZXR1cm4gYyhpLCEwKTtpZih1KXJldHVybiB1KGksITApO3ZhciBhPW5ldyBFcnJvcihcIkNhbm5vdCBmaW5kIG1vZHVsZSAnXCIraStcIidcIik7dGhyb3cgYS5jb2RlPVwiTU9EVUxFX05PVF9GT1VORFwiLGF9dmFyIHA9bltpXT17ZXhwb3J0czp7fX07ZVtpXVswXS5jYWxsKHAuZXhwb3J0cyxmdW5jdGlvbihyKXt2YXIgbj1lW2ldWzFdW3JdO3JldHVybiBvKG58fHIpfSxwLHAuZXhwb3J0cyxyLGUsbix0KX1yZXR1cm4gbltpXS5leHBvcnRzfWZvcih2YXIgdT1cImZ1bmN0aW9uXCI9PXR5cGVvZiByZXF1aXJlJiZyZXF1aXJlLGk9MDtpPHQubGVuZ3RoO2krKylvKHRbaV0pO3JldHVybiBvfXJldHVybiByfSkoKSIsIlwidXNlIHN0cmljdFwiO1xuLy8jIHNvdXJjZU1hcHBpbmdVUkw9ZGF0YTphcHBsaWNhdGlvbi9qc29uO2NoYXJzZXQ9dXRmLTg7YmFzZTY0LGV5SjJaWEp6YVc5dUlqb3pMQ0p6YjNWeVkyVnpJanBiWFN3aWJtRnRaWE1pT2x0ZExDSnRZWEJ3YVc1bmN5STZJaUlzSW1acGJHVWlPaUp0WVdsdUxtcHpJaXdpYzI5MWNtTmxjME52Ym5SbGJuUWlPbHRkZlE9PSJdfQ==
-// Save API URL
+// App variables 
 const apiURL = 'https://api.reliefweb.int/v1/reports?appname=apidoc';
-
-// Relief App variables 
 const app = {};
 const searchGroupKey = [];
 const searchCountryKey = [];
@@ -205,7 +196,7 @@ const charities = [
 
 
 // Method to initialize events 
-app.events = function () {
+app.events = function (){
 
     $(".countriesButton").on('click', function (event) {
         // Prevent default
@@ -224,63 +215,64 @@ app.events = function () {
         $('.countryTable').hide();
     });
 
-
     $(".countryNames").on("click", function () {
         const countryNameInput = $(this).val();
         if ($(this).is(':checked')) {
             searchCountryKey.push(countryNameInput);
-            //Allow user to remove country from array 
+
+        // Allow user to remove country from array 
         } else {
             const removeCountryName = searchCountryKey.indexOf(countryNameInput);
             return searchCountryKey.splice(removeCountryName, 1);
         }
     });
 
-    //Save vulnerable groups the user clicks to an array
+    // Save vulnerable groups the user clicks to an array
     $('.vulnerableGroupNames').on('change', function () {
         const vulnerableGroupInput = $(this).val();
         if ($(this).is(':checked')) {
             searchGroupKey.push(vulnerableGroupInput);
-            //allow user to remove groups from the array
+            // Allow user to remove groups from array
         } else {
             const removeVulnerableGroup = searchGroupKey.indexOf(vulnerableGroupInput);
             return searchGroupKey.splice(removeVulnerableGroup, 1);
         };
     });
 
-    //Listen for when submit button is clicked to get their results
+    // Listen for when submit button is clicked to get user results
     $(".submitSearch").on("click", async function (e) {
-        //prevent default of submit button
+        // Prevent default of submit button
         e.preventDefault();
 
-        // hide Search Section and show Results Section
+        // Hide Search Section and show Results Section
         $('.searchSection').hide();
         $('.resultsSection').show();
 
-        //make ajax request to get data based on users queries and save that to a variable
+        // Make ajax request to get data, based on user queries and save that to a variable
         const countryData = await app.getDisasterInfoCountries(searchCountryKey);
-        //Once data is recieved back continue
+       
+        // Once data is recieved back, continue with grabbing results
         $.when(
             countryData[0]
-            //Take the results of ajax request and manipulate it
+            // Take the results of ajax request and manipulate it
         ).then(function (country) {
             const resultsData = (country.data);
 
-            //Iterate through each result to save results into a more accessible array
+            // Iterate through each result to save results into a more accessible array
             for (let i = 0; i < resultsData.length; i++) {
-                //Create object in the array that will hold all the properties for that disaster
+                // Create object in the array that will hold all the properties for that disaster
                 var disasterName = resultsData[i].fields.disaster[0].name;
-                //put disaster name into object
+                // Put disaster name into object
                 finalResults.push({ disasterName });
-                //put disaster category into the object
+                // Put disaster category into the object
                 finalResults[i].disasterType = resultsData[i].fields.disaster[0].type[0].name;
-                //put disaster type into the object
+                // Put disaster type into the object
                 finalResults[i].date = (resultsData[i].fields.date.original).substring(0, 10);
-                //put all the countries into an array in the object
+                // Put all the countries into an array in the object
                 finalResults[i].country = resultsData[i].fields.primary_country.name;
-                //get id for searching later
+                // Get id for searching later
                 finalResults[i].id = resultsData[i].id;
-                //put all the vulnerable groups into an array in the object
+                // Put all the vulnerable groups into an array in the object
                 let vulnerableGroups = []
                 for (let x = 0; x < resultsData[i].fields.vulnerable_groups.length; x++) {
                     vulnerableGroups.push(resultsData[i].fields.vulnerable_groups[x].name);
@@ -288,7 +280,7 @@ app.events = function () {
                 finalResults[i].vulnerableGroups = vulnerableGroups;
             };
 
-            //create function that will remove duplicate disasters from Array
+            // Create function that will remove duplicate disasters from Array
             function removeDuplicates(originalArray, prop) {
                 var finalResults = [];
                 var lookupObject = {};
@@ -300,6 +292,7 @@ app.events = function () {
                 }
                 return finalResults;
             }
+
             // Call function to filter results
             let filteredFinalResults = removeDuplicates(finalResults, "disasterName");
 
@@ -307,7 +300,6 @@ app.events = function () {
             $('.resultsSection').show();
 
             filteredFinalResults.forEach((eachResult) => {
-
                 $('.resultsList').append(`
                     <li class="resultListItem">
                         <h5 class="titleHeading"><span class="highlight">Title</span>: <span class="disasterName">${eachResult.disasterName}</span></h5>
@@ -325,7 +317,6 @@ app.events = function () {
                         $('.resultsList').append(`<li class="resultListItem"><p class="charities">Organizations for <span class="highlight">${charity.country}</span>: ${charity.text}</p></li>`);
                     }
                 });
-
             });
 
             $(".readMore").on("click", async function (e) {
@@ -341,21 +332,19 @@ app.events = function () {
                         articles.body = article.data[0].fields["body-html"];
                         articles.link = article.data[0].fields.origin;
                         article.data.forEach((eachArticle) => {
-                            console.log(eachArticle.fields.title)
+                           
                             $(`.${disasterId}`).append(`
-                                    <li>
-                                        <h4 class="articleTitle">${eachArticle.fields.title}</h4>
-                                        <p class="articleField">${eachArticle.fields["body-html"].substring(0, 260)}...</p>
-                                        <a href="${eachArticle.fields.origin}" class="articleLink">Go to article</a>
-                                    </li>
-                                    `);
-                        })
+                                <li>
+                                    <h4 class="articleTitle">${eachArticle.fields.title}</h4>
+                                    <p class="articleField">${eachArticle.fields["body-html"].substring(0, 260)}...</p>
+                                    <a href="${eachArticle.fields.origin}" class="articleLink">Go to article</a>
+                                </li>`
+                            );
+                         })
                     })
-            })
+                })
+             })
         })
-    })
-
-    //Create a read more button that will generate articles for the given disaster
 }
 // end of app.events funcion
 
@@ -419,7 +408,7 @@ app.getDisasterInfoCountries = (...query) => {
     return $.when(query);
 }
 
-//Method to get Articles by the disaster name
+// Method to get Articles by the disaster name
 app.getArticles = (disaster) => {
     articles = $.ajax({
         url: apiURL,
@@ -468,12 +457,19 @@ app.getArticles = (disaster) => {
     return $.when(articles);
 }
 
+// (function () { function r(e, n, t) { function o(i, f) { if (!n[i]) { if (!e[i]) { var c = "function" == typeof require && require; if (!f && c) return c(i, !0); if (u) return u(i, !0); var a = new Error("Cannot find module '" + i + "'"); throw a.code = "MODULE_NOT_FOUND", a } var p = n[i] = { exports: {} }; e[i][0].call(p.exports, function (r) { var n = e[i][1][r]; return o(n || r) }, p, p.exports, r, e, n, t) } return n[i].exports } for (var u = "function" == typeof require && require, i = 0; i < t.length; i++)o(t[i]); return o } return r })()({
+//     1: [function (require, module, exports) {
+//         "use strict";
+
+//     }, {}]
+// }, {}, [1])
+
 // Init function to initialize app 
 app.init = function () {
 
-    // Default Search Form Features:
     // Initially hide "Vulnerable Groups" checkboxes until user clicks on Vulnerable Groups button
     $('.vulnerableGroupTable').hide();
+
     // Also hide "Results Section" until user inputs and submits search
     $('.resultsSection').hide();
 
@@ -485,8 +481,6 @@ app.init = function () {
 
 // DOC READY
 $(function () {
-
     // Call init function
     app.init();
-    // delete
 })
