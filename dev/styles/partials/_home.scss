@@ -251,7 +251,10 @@ button {
 
 .charities {
     @include primaryFont(15);
-    font-weight: 400;   
+    font-weight: 400;  
+    border: 1px solid black;
+    padding: 5px 10px; 
+    background: gainsboro;
 }
 
 
@@ -264,6 +267,7 @@ button {
 
 .articleLink {
     color: gray;
+    text-transform: uppercase;
     transition: 0.3s ease-in-out all;
 
     &:hover {
@@ -273,9 +277,13 @@ button {
 
 .readMore {
     transition: 0.3s ease-in-out all;
+    background: $accentColor;
+    color: white;
+    border: 1px solid white;
+    text-transform: uppercase;
+
     &:hover {
-        background: white;
-        border: 1px solid gray;
+        background: lighten($accentColor, 15);
     }
 }
 
