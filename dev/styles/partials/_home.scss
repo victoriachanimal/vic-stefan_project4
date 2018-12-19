@@ -118,6 +118,7 @@ fieldset {
 .vulnerableGroupButton {
     width: 49.81%;
     padding: 12.5px 0;
+     transition: all 0.3s;
 }
 
 button {
@@ -132,22 +133,20 @@ button {
     color: black;
 }
 
-.countriesButton,
-.submitSearch {
+.countriesButton {
     &:hover {
-        background-color: lighten($accentColor, 20);
-        border: 1.5px solid lighten($accentColor, 20);
-        transition: all 0.3s;
+        background: lighten(#C4A444, 20);
+        border: 1.5px solid lighten(#C4A444, 20);
     }
 }
 
 .vulnerableGroupButton {
-    // background-color: $thirdColor;
+    background-color: white;
     border: 1.5px solid #C4A444;
     color: black;
 
     &:hover {
-        // background-color: lighten($thirdColor, 20);
+        background-color: lighten(white, 20);
         border: 1.5px solid lighten(#C4A444, 20);
         transition: all 0.3s;
     }

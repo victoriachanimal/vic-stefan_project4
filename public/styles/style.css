@@ -248,7 +248,8 @@ fieldset {
 .countriesButton,
 .vulnerableGroupButton {
   width: 49.81%;
-  padding: 12.5px 0; }
+  padding: 12.5px 0;
+  transition: all 0.3s; }
 
 button {
   font-size: 23.5px;
@@ -260,16 +261,16 @@ button {
   border: 1.5px solid #C4A444;
   color: black; }
 
-.countriesButton:hover,
-.submitSearch:hover {
-  background-color: #fff6b3;
-  border: 1.5px solid #fff6b3;
-  transition: all 0.3s; }
+.countriesButton:hover {
+  background: #dcca92;
+  border: 1.5px solid #dcca92; }
 
 .vulnerableGroupButton {
+  background-color: white;
   border: 1.5px solid #C4A444;
   color: black; }
   .vulnerableGroupButton:hover {
+    background-color: white;
     border: 1.5px solid #dcca92;
     transition: all 0.3s; }
 
@@ -521,7 +522,7 @@ footer {
     .headerList a:hover {
       border: none; }
   .infoContainer {
-    padding-top: 1px;
+    padding-top: 25px;
     flex-direction: column;
     position: relative; }
     .infoContainer .infoWhat {
