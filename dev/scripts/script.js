@@ -314,7 +314,7 @@ app.events = function (){
                 charities.forEach((charity) => {
 
                     if (charity.country === eachResult.country) {
-                        $('.resultsList').append(`<li class="resultListItem"><p class="charities">Organizations for <span class="highlight">${charity.country}</span>: ${charity.text}</p></li>`);
+                        $('.resultsList').append(`<p class="charities">Organizations for <span class="highlight">${charity.country}</span>: ${charity.text}</p>`);
                     }
                 });
             });
@@ -337,7 +337,7 @@ app.events = function (){
                                 <li>
                                     <h4 class="articleTitle">${eachArticle.fields.title}</h4>
                                     <p class="articleField">${eachArticle.fields["body-html"].substring(0, 260)}...</p>
-                                    <a href="${eachArticle.fields.origin}" class="articleLink">Go to article</a>
+                                    <a href="${eachArticle.fields.origin}" class="articleLink">See Article</a>
                                 </li>`
                             );
                          })

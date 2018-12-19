@@ -2,55 +2,6 @@
 
 /* Landscape Phone to Portrait Tablet */
 @media (max-width: 760px) {
-    
-    // HEADER
-    .headerNav {
-
-        .wrapper {
-            justify-content: center;
-        }
-
-        .logo {
-            display: none;
-        }
-    }
-
-    // displayed Header Title (hidden full screen)
-     header .title {   
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        .iconContainer2 {
-            position: relative;
-        }
-
-        h1 {
-            @include primaryFont(30);
-            text-align: center;
-            margin: 40px 0 20px 0;
-            color: $accentColor;
-        }
-
-        .fa-parachute-box {
-            font-size: 33px;
-            position: absolute;
-            top: -25px;
-            right: -65px;
-            z-index: 100;
-        }
-
-        .earthIcon {
-            position: absolute;
-            width: 75px;
-            height: 75px;
-            top: -10px;
-            right: -80px;
-        }
-    }
-    // END OF HEADER
-
 
     // MAIN
     .introSection {
@@ -71,12 +22,20 @@
         }
     }
 
+     .down {
+        top: 300px;
+    }
+
     .searchSection {
         .countryTable,
         .vulnerableGroupTable {
             padding: 5px;
             grid-gap: 0;
         }
+    }
+
+    .results {
+        padding: 0;
     }
     // END OF MAIN
 }
@@ -86,57 +45,80 @@
 @media (max-width: 480px) {
 
     // HEADER
+    header h3 {
+        @include primaryFont(18);
+        margin: 12px 0 7px 0;
+    }
+
     .headerList {
         li {
-            @include primaryFont(13.5);
+            @include primaryFont(20);
+        }
+
+        a {
+            border: none;
+
+            &:hover {
+                border: none;
+            }
         }
     }
 
-    header .title {
-
-        h1 {
-            @include primaryFont(25);
-            padding: 15px 0 0 0;
-            margin-top: 10px;
-        }
-
-        .fa-parachute-box {
-            font-size: 20px;
-            right: -45px;
-            top: -15px;
-        }
-
-        .earthIcon {
-            width: 50px;
-            height: 50px;
-            right: -55px;
-            top: -5px;
-        }
-    }
-    // END OF HEADER
 
     // MAIN (for Home, About and Resources pages)
-    .introSection {
-        h4 {
-            margin: 0;
-        }
+    
+    .infoContainer {
+        padding-top: 1px;
+        flex-direction: column;
+        position: relative;
 
-        .down {
-            margin: 0px;
+        .infoWhat {
+            padding-bottom: 20px;
+        }
+        .info {
+            width: 100%;
+            margin: 0;
         }
     }
 
+    .down {
+        margin-top: 15px;
+        position: relative;
+        top: 0;
+        
+        a {
+            font-size: 13px;
+        }
+    }
+
+   
     .introSection,
     .searchSection,
     .aboutSection,
     .resourcesSection {
         h4 {
-            @include primaryFont(16);
+            @include primaryFont(23.5);
+            margin-bottom: 0;
         }
 
         p {
-            @include secondaryFont(12);
+            @include secondaryFont(13);
         }   
+    }
+
+    button {
+        font-size: 16px;
+    }
+
+    .countriesButton,
+    .vulnerableGroupButton {
+        width: 49.5%;
+        padding: 10px 0;
+    }
+
+    .submitSearch,
+    .readMore {
+        font-size: 13px;
     }
 
     .searchSection {
@@ -161,6 +143,52 @@
             @include primaryFont(12.5);
         }   
     }
+
+    .results {
+        h6 {
+            font-size: 13.5px;
+        }
+
+        h5 {
+            font-size: 14.5px;
+        }
+
+        h4 {
+            font-size: 15px;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        .readMore {
+            margin-top: 12px;
+        }
+    }
+
+    .aboutSection {
+        padding: 30px 0;
+
+        h4 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    }
+
+    .resourcesSection {
+        padding: 10px 0;
+
+        h4 {
+            font-size: 16px;
+        }
+
+        li {
+            font-family: 'Merriweather Sans', sans-serif;
+        }
+    }
+
+
+    
     // END OF MAIN
 
     // FOOTER

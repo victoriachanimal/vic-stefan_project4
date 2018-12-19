@@ -11,7 +11,7 @@
 	<title>Global Alerts - Home</title>
 
 	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700|Varela" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300, 400|Oswald:400" rel="stylesheet">
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
@@ -29,64 +29,45 @@
 			<div class="wrapper">
 				<div class="logo">
 					<h3>Global Alerts</h3>
-					<div class="iconContainer">
-						<i class="fas fa-parachute-box"></i>
-						<div class="earthIcon">
-							<img src="earth.svg" alt="Earth icon">
-						</div>
-					</div>
 				</div>
 				
 				<ul class="headerList">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="resources.html">Resources</a></li>
-					<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="about.html">?</a></li>
 				</ul>
 			</div>
 		</nav>
 		<!-- End of Header Nav -->
-
-		<!-- Main Heading -->
-		<div class="title wrapper">
-			<h1>Global Alerts</h1>
-			<div class="iconContainer2">
-				<i class="fas fa-parachute-box"></i>
-				<div class="earthIcon">
-					<img src="earth.svg" alt="Earth icon">
-				</div>
-			</div>
-		</div>
-		<!-- End of Main Heading -->
 	</header>
 	<!-- END OF HEADER -->
 
 	<!-- MAIN -->
 	<main>
 		<!-- SECTION 1: INTRO  -->
-		<section class="introSection wrapper">
-			<h4>How to Use</h4>
-			<div class="introRows">
-				<p><span class="highlight">Global Alerts</span> provides users with a go-to-resource to search key information and articles on natural disasters happening in 37 of the world's most high-risk countries.</p>
-
-				<p>Specify your search below based on <span class="highlight">country</span> and <span class="highlight">vulnerable group</span>, and the app will return real-time data, as well as charities and organizations involved in providing emergency and disaster relief for each given location.</p>
-
-				<p>*Please note that search results may also include natural disasters which your chosen country may not be primarily affected
-				by, but involved in.</p>
-			</div>
-			<div class="down">
-				<a href=#searchSection><i class="fas fa-long-arrow-alt-down"></i></a>
-			</div>
+		<section class="introSection">
+			<div class="wrapper">
+				<div class="infoContainer">
+					<div class="infoWhat info">
+						<h4>What</h4>
+						<p>Global Alerts is a go-to-resource that returns real-time data on natural disasters in 37 of the world's most high-risk countries.</p>
+					</div>
+					<div class="infoHow info">
+						<h4>How to Use</h4>
+						<p>Filter your search by country and/or vulnerable group, and get key information, articles and a list of organizations involved in providing emergency and disaster relief for each given location.</p>
+					</div>
+				</div>
+				<div class="down">
+					<a href=#searchSection>Search</a>
+				</div>
+			</div>	
 		</section>
 		<!-- END OF SECTION 1: INTRO -->
 
 		<!-- SECTION 2: SEARCH -->
 		<section class="searchSection" id="searchSection">
 			<div class="formBackground">
-			<h4 class="wrapper">Search By</h4>
+			<h4>Filter your search by...</h4>
 				<!-- Search Form -->
-				<form action="" class="wrapper">
+				<form action="" class="wrapper" id="formSection">
 					<div class="formButtons">
 						<button class="countriesButton">Countries</button>
 						<button class="vulnerableGroupButton">Vulnerable Groups</button>
@@ -473,10 +454,6 @@
 	<footer>
 		<div class="footerInfo wrapper">
 			<p>&copy; Global Alerts</p>
-			<div class="footerSocial">
-				<a href="#"><i class="fab fa-facebook-f"></i></a>
-				<a href="#"><i class="fab fa-twitter"></i></a>
-			</div>
 		</div>
 	</footer>
 	<!-- END OF FOOTER -->

@@ -1,62 +1,110 @@
 // HOMEPAGE STYLES
 
 // SECTION 1: HOW TO USE STYLES
-.introRows {
+.introSection {
+    background: url(geometricEarth.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    color: white;
+    padding-top: 25px;
+    position: relative;
+    z-index: 100;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+        background-image: linear-gradient(to bottom right, $accentColor, $secondaryColor);
+        opacity: .6; 
+        z-index: 200;
+    }
+
+}
+
+
+.infoContainer {
+    position: absolute;
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
+    z-index: 300;
+    left: 0;
+    right: 0;
+    // background: rgba(0, 0, 0, 0.5);
+    padding: 25px 0;
+    color: black;
+}
 
-    p {
-        width: calc(33.3% - (30px / 3));
-        margin: 0;
-    }
+.infoWhat {
+    margin-right: 35px;
+}
 
-    p:nth-of-type(2) {
-        margin: 0 15px;
-    }
+.info {
+    width: calc(45% - 35px);
+    text-align: center;
 }
 
 .down {
-    margin: 25px 0 10px 0;
-    font-size: 35px;
+    margin-top: 85px;
     text-align: center;
-
+    position: relative;
+    z-index: 400;
+    top: 280px;
+    
     a {
-        transition: 0.3s ease all;
+        @include secondaryFont(18);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: black;
+        border: 2px solid black;
+        padding: 10px 15px;
+        font-weight: 300;
 
-        &:hover {
-            color: gray;
-        } 
+            &:hover {
+                color: $secondaryColor;
+                border: 2px solid $secondaryColor;
+        }
     }
 }
-
 // END OF SECTION 1: HOW TO USE STYLES
 
 // SECTION 2: SEARCH STYLES
 .searchSection {
-    margin-top: 50px;
 
     h4 {
         padding-bottom: 25px;
+        border-bottom: none;
+        color: white;
     }
 }
 
 .formBackground {
-    background: linear-gradient($thirdColor, white, $thirdColor);
-    padding: 30px 0 70px 0;
+    background: black;
+    text-align: center;
+    padding: 90px 0 70px 0;
 }
 
 form {
     text-align: center;
     padding-bottom: 20px;
     box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0);
 }
 
-form, 
+
 fieldset {
-    background-color: white;
-    border: 1px solid white;
+   background-image: url(worldmap.png);
+   background-color: white;
+   background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+   border: 1px solid white;
 }
 
 .formButtons {
@@ -68,20 +116,20 @@ fieldset {
 
 .countriesButton,
 .vulnerableGroupButton {
-    width: 50%;
+    width: 49.81%;
+    padding: 12.5px 0;
 }
 
 button {
-    @include primaryFont(16);
-    width: 135px;
-    height: 50px;
+    @include primaryFont(23.5);
+    // width: 135px;
+    // height: 55px;
 }
 
 .countriesButton {
-    background-color: $accentColor;
-    border: 1.5px solid $accentColor;
-    color: white;
-    opacity: 0.85;
+    background-color: #C4A444;
+    border: 1.5px solid #C4A444;
+    color: black;
 }
 
 .countriesButton,
@@ -94,13 +142,13 @@ button {
 }
 
 .vulnerableGroupButton {
-    background-color: $thirdColor;
-    border: 1.5px solid $accentColor;
-    color: $accentColor;
+    // background-color: $thirdColor;
+    border: 1.5px solid #C4A444;
+    color: black;
 
     &:hover {
-        background-color: lighten($thirdColor, 20);
-        border: 1.5px solid lighten($accentColor, 20);
+        // background-color: lighten($thirdColor, 20);
+        border: 1.5px solid lighten(#C4A444, 20);
         transition: all 0.3s;
     }
 }
@@ -172,16 +220,26 @@ button {
     position: absolute;
     left: 8.5px;
     top: 1px;
-    color: $accentColor;
+    color: $secondaryColor;
 }
 
 .submitSearch {
-    background-color: $accentColor;
-    border: 1px solid $accentColor;
-    color: white;
-    opacity: 0.85;
-    margin: 0 auto;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    @include secondaryFont(18);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $secondaryColor;
+    border: 2px solid $secondaryColor;
+    padding: 10px 15px;
+    font-weight: 300;
+    background: black;
+    margin-top: 35px;
+    transition: 0.3s ease-in-out all;
+
+     &:hover {
+        color: lighten($secondaryColor, 20);
+        border: 2px solid lighten($secondaryColor, 20);
+        background: black;
+    }
 }
 // END OF SECTION 2: SEARCH STYLES
 
@@ -189,20 +247,27 @@ button {
 // SECTION 3: * RESULTS *
 // Results Page styles (located in home.html)
 .resultsSection {
-    background: linear-gradient($thirdColor, white, $thirdColor);
     padding: 20px 0 50px 0;
     margin-top: 50px;
 
+    h4 {
+        color: black;
+        // border-bottom: 2px solid black;
+    }
+
     h5 {
-        @include primaryFont(18);
-        color: $accentColor;
+        @include secondaryFont(18);
+        color: black;
+        border-bottom: 2px solid $accentColor;
         font-weight: 400;
+        display: inline-block;
     }
 
     h6 {
-        @include primaryFont(15);
+        @include secondaryFont(15);
         font-weight: 400;
         margin: 12px 0;
+        color: black;
     }
 
 }
@@ -220,6 +285,7 @@ button {
     align-items: center;
     flex-direction: row;
     margin-top: 5px;
+    color: black;
 
     &:hover {
         color: lighten($primaryColor, 30);
@@ -237,37 +303,48 @@ button {
 
 .results {
     padding: 15px 30px;
-    background: white;
-    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    // background: white;
+    // box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
-.resultListItem {
-    padding-bottom: 10px;
-}
+
 
 .vulnerableGroupHeading {
     color: gray;
 }
 
 .charities {
-    @include primaryFont(15);
+    @include secondaryFont(15);
     font-weight: 400;  
-    border: 1px solid black;
     padding: 5px 10px; 
     background: gainsboro;
+    margin-bottom: 75px;
 }
 
 
 // READ MORE
+.resultsList {
+    p {
+        @include secondaryFont(13);
+    }
+
+}
+
+.resultListItem {
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+    padding: 10px 30px 30px 30px;
+    margin: 25px 0;
+}
+
 .articleTitle {
     text-align: left;
-    @include primaryFont(15);
-    padding-top: 25px;
+    @include primaryFont(27);
+    padding-top: 35px;
 }
+
 
 .articleLink {
     color: gray;
-    text-transform: uppercase;
     transition: 0.3s ease-in-out all;
 
     &:hover {
@@ -276,15 +353,24 @@ button {
 }
 
 .readMore {
-    transition: 0.3s ease-in-out all;
-    background: $accentColor;
-    color: white;
-    border: 1px solid white;
+    @include secondaryFont(15);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    color: #C4A444;
+    border: 2px solid #C4A444;
+    padding: 10px 15px;
+    font-weight: 300;
+    
+    margin-top: 35px;
+    transition: 0.3s ease-in-out all;
 
-    &:hover {
-        background: lighten($accentColor, 15);
+     &:hover {
+        color: lighten(#C4A444, 20);
+        border: 2px solid lighten(#C4A444, 20);
+        background: black;
     }
 }
+
+
 
 // END OF SECTION 3: * RESULTS *

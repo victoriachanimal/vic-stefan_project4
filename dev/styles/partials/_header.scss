@@ -1,45 +1,14 @@
 // HEADER STYLES
 
 .headerNav {
-    border-bottom: 2.5px solid $thirdColor;
+    background: black;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
     
     .wrapper {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .logo {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
-
-    .iconContainer {
-        position: relative;
-        margin-left: 10px;
-    }
-
-    .fa-parachute-box {
-        position: absolute;
-        font-size: 25px;
-        top: -25px;
-        margin-left: 10px;
-        z-index: 20;
-    }
-
-    .earthIcon {
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        z-index: 10;
-        top: -15px;
-        left: 0;
-
-        img {
-            width: 100%;
-        }
     }
 }
 
@@ -49,22 +18,22 @@
     flex-direction: row;
 
     li {
-        padding: 15px;
+        // padding: 16px 12px 12px 12px;
+        @include primaryFont(25);
     }
 
     a {
-        padding-bottom: 5px;
-        transition: all 0.3s;
+        border: 1px solid $secondaryColor;
+        // border-radius: 20px;
+        padding: 0px 8px;
+        display: inline-block;
 
         &:hover {
-            border-bottom: 2px solid black;
-            font-weight: 700;
+            color: lighten($secondaryColor, 20);
+            border: 1px solid lighten($secondaryColor, 20);
         }
     }
 }
 
-.title {
-    display: none;
-}
 
 

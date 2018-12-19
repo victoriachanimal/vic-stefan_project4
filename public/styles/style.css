@@ -133,87 +133,110 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   box-sizing: border-box; }
 
 .headerNav {
-  border-bottom: 2.5px solid #EBEBEB; }
+  background: black;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
   .headerNav .wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center; }
-  .headerNav .logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center; }
-  .headerNav .iconContainer {
-    position: relative;
-    margin-left: 10px; }
-  .headerNav .fa-parachute-box {
-    position: absolute;
-    font-size: 25px;
-    top: -25px;
-    margin-left: 10px;
-    z-index: 20; }
-  .headerNav .earthIcon {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    z-index: 10;
-    top: -15px;
-    left: 0; }
-    .headerNav .earthIcon img {
-      width: 100%; }
 
 .headerList {
   display: flex;
   flex-direction: row; }
   .headerList li {
-    padding: 15px; }
+    font-size: 25px;
+    font-size: 2.5rem;
+    font-family: 'Oswald', sans-serif; }
   .headerList a {
-    padding-bottom: 5px;
-    transition: all 0.3s; }
+    border: 1px solid orange;
+    padding: 0px 8px;
+    display: inline-block; }
     .headerList a:hover {
-      border-bottom: 2px solid black;
-      font-weight: 700; }
+      color: #ffc966;
+      border: 1px solid #ffc966; }
 
-.title {
-  display: none; }
+.introSection {
+  background: url(geometricEarth.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 90vh;
+  color: white;
+  padding-top: 25px;
+  position: relative;
+  z-index: 100; }
+  .introSection:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #FEE94E, orange);
+    opacity: .6;
+    z-index: 200; }
 
-.introRows {
+.infoContainer {
+  position: absolute;
   display: flex;
+  justify-content: center;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start; }
-  .introRows p {
-    width: calc(33.3% - (30px / 3));
-    margin: 0; }
-  .introRows p:nth-of-type(2) {
-    margin: 0 15px; }
+  z-index: 300;
+  left: 0;
+  right: 0;
+  padding: 25px 0;
+  color: black; }
+
+.infoWhat {
+  margin-right: 35px; }
+
+.info {
+  width: calc(45% - 35px);
+  text-align: center; }
 
 .down {
-  margin: 25px 0 10px 0;
-  font-size: 35px;
-  text-align: center; }
+  margin-top: 85px;
+  text-align: center;
+  position: relative;
+  z-index: 400;
+  top: 280px; }
   .down a {
-    transition: 0.3s ease all; }
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-family: 'Merriweather Sans', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: black;
+    border: 2px solid black;
+    padding: 10px 15px;
+    font-weight: 300; }
     .down a:hover {
-      color: gray; }
+      color: orange;
+      border: 2px solid orange; }
 
-.searchSection {
-  margin-top: 50px; }
-  .searchSection h4 {
-    padding-bottom: 25px; }
+.searchSection h4 {
+  padding-bottom: 25px;
+  border-bottom: none;
+  color: white; }
 
 .formBackground {
-  background: linear-gradient(#EBEBEB, white, #EBEBEB);
-  padding: 30px 0 70px 0; }
+  background: black;
+  text-align: center;
+  padding: 90px 0 70px 0; }
 
 form {
   text-align: center;
   padding-bottom: 20px;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0); }
 
-form,
 fieldset {
+  background-image: url(worldmap.png);
   background-color: white;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 1px solid white; }
 
 .formButtons {
@@ -224,34 +247,30 @@ fieldset {
 
 .countriesButton,
 .vulnerableGroupButton {
-  width: 50%; }
+  width: 49.81%;
+  padding: 12.5px 0; }
 
 button {
-  font-size: 16px;
-  font-size: 1.6rem;
-  font-family: 'Cabin', sans-serif;
-  width: 135px;
-  height: 50px; }
+  font-size: 23.5px;
+  font-size: 2.35rem;
+  font-family: 'Oswald', sans-serif; }
 
 .countriesButton {
-  background-color: #D2113A;
-  border: 1.5px solid #D2113A;
-  color: white;
-  opacity: 0.85; }
+  background-color: #C4A444;
+  border: 1.5px solid #C4A444;
+  color: black; }
 
 .countriesButton:hover,
 .submitSearch:hover {
-  background-color: #f15878;
-  border: 1.5px solid #f15878;
+  background-color: #fff6b3;
+  border: 1.5px solid #fff6b3;
   transition: all 0.3s; }
 
 .vulnerableGroupButton {
-  background-color: #EBEBEB;
-  border: 1.5px solid #D2113A;
-  color: #D2113A; }
+  border: 1.5px solid #C4A444;
+  color: black; }
   .vulnerableGroupButton:hover {
-    background-color: white;
-    border: 1.5px solid #f15878;
+    border: 1.5px solid #dcca92;
     transition: all 0.3s; }
 
 .countryTable,
@@ -313,32 +332,46 @@ button {
   position: absolute;
   left: 8.5px;
   top: 1px;
-  color: #D2113A; }
+  color: orange; }
 
 .submitSearch {
-  background-color: #D2113A;
-  border: 1px solid #D2113A;
-  color: white;
-  opacity: 0.85;
-  margin: 0 auto;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: orange;
+  border: 2px solid orange;
+  padding: 10px 15px;
+  font-weight: 300;
+  background: black;
+  margin-top: 35px;
+  transition: 0.3s ease-in-out all; }
+  .submitSearch:hover {
+    color: #ffc966;
+    border: 2px solid #ffc966;
+    background: black; }
 
 .resultsSection {
-  background: linear-gradient(#EBEBEB, white, #EBEBEB);
   padding: 20px 0 50px 0;
   margin-top: 50px; }
+  .resultsSection h4 {
+    color: black; }
   .resultsSection h5 {
     font-size: 18px;
     font-size: 1.8rem;
-    font-family: 'Cabin', sans-serif;
-    color: #D2113A;
-    font-weight: 400; }
+    font-family: 'Merriweather Sans', sans-serif;
+    color: black;
+    border-bottom: 2px solid #FEE94E;
+    font-weight: 400;
+    display: inline-block; }
   .resultsSection h6 {
     font-size: 15px;
     font-size: 1.5rem;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     font-weight: 400;
-    margin: 12px 0; }
+    margin: 12px 0;
+    color: black; }
 
 .resultsHeadings {
   display: flex;
@@ -350,9 +383,10 @@ button {
   display: flex;
   align-items: center;
   flex-direction: row;
-  margin-top: 5px; }
+  margin-top: 5px;
+  color: black; }
   .back a:hover {
-    color: gray;
+    color: #4d4d4d;
     transition: all 0.3s; }
   .back a .fa-long-arrow-alt-left {
     font-size: 25px; }
@@ -360,12 +394,7 @@ button {
     margin-left: 10px; }
 
 .results {
-  padding: 15px 30px;
-  background: white;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2); }
-
-.resultListItem {
-  padding-bottom: 10px; }
+  padding: 15px 30px; }
 
 .vulnerableGroupHeading {
   color: gray; }
@@ -373,37 +402,59 @@ button {
 .charities {
   font-size: 15px;
   font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   font-weight: 400;
-  border: 1px solid black;
   padding: 5px 10px;
-  background: gainsboro; }
+  background: gainsboro;
+  margin-bottom: 75px; }
+
+.resultsList p {
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-family: 'Merriweather Sans', sans-serif; }
+
+.resultListItem {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px 30px 30px 30px;
+  margin: 25px 0; }
 
 .articleTitle {
   text-align: left;
-  font-size: 15px;
-  font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif;
-  padding-top: 25px; }
+  font-size: 27px;
+  font-size: 2.7rem;
+  font-family: 'Oswald', sans-serif;
+  padding-top: 35px; }
 
 .articleLink {
   color: gray;
-  text-transform: uppercase;
   transition: 0.3s ease-in-out all; }
   .articleLink:hover {
     color: lightgray; }
 
 .readMore {
-  transition: 0.3s ease-in-out all;
-  background: #D2113A;
-  color: white;
-  border: 1px solid white;
-  text-transform: uppercase; }
+  font-size: 15px;
+  font-size: 1.5rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #C4A444;
+  border: 2px solid #C4A444;
+  padding: 10px 15px;
+  font-weight: 300;
+  margin-top: 35px;
+  transition: 0.3s ease-in-out all; }
   .readMore:hover {
-    background: #f04065; }
+    color: #dcca92;
+    border: 2px solid #dcca92;
+    background: black; }
 
 .aboutSection {
-  padding-bottom: 60px; }
+  padding: 60px 0; }
+  .aboutSection p {
+    font-weight: 300;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: 'Merriweather Sans', sans-serif; }
   .aboutSection p:last-child {
     margin-top: 35px; }
 
@@ -419,75 +470,23 @@ button {
   padding-bottom: 60px; }
   .resourcesSection li {
     list-style: disc;
-    line-height: 2.5; }
-  .resourcesSection a:hover {
-    color: #9a9a9a;
-    transition: color 0.3s; }
-
-.resourcesFooter {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-bottom: 1px; }
-
-footer {
-  background-color: #333333;
-  padding: 1px 0; }
-  footer p {
-    color: #EBEBEB;
-    padding: 0 25px; }
-  footer a {
-    color: #D2113A;
-    font-size: 20px;
-    padding: 0 10px; }
-    footer a:hover {
-      color: #f15878;
+    line-height: 2.5;
+    margin-left: 15px; }
+  .resourcesSection a {
+    color: #C4A444; }
+    .resourcesSection a:hover {
+      color: #9a9a9a;
       transition: color 0.3s; }
 
-.footerInfo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center; }
-
-.footerSocial {
-  display: flex;
-  flex-direction: row;
-  padding: 0 25px; }
+footer {
+  background-color: black;
+  padding: 1px 0; }
+  footer p {
+    font-size: 1.25rem;
+    color: white; }
 
 /* Landscape Phone to Portrait Tablet */
 @media (max-width: 760px) {
-  .headerNav .wrapper {
-    justify-content: center; }
-  .headerNav .logo {
-    display: none; }
-  header .title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center; }
-    header .title .iconContainer2 {
-      position: relative; }
-    header .title h1 {
-      font-size: 30px;
-      font-size: 3rem;
-      font-family: 'Cabin', sans-serif;
-      text-align: center;
-      margin: 40px 0 20px 0;
-      color: #D2113A; }
-    header .title .fa-parachute-box {
-      font-size: 33px;
-      position: absolute;
-      top: -25px;
-      right: -65px;
-      z-index: 100; }
-    header .title .earthIcon {
-      position: absolute;
-      width: 75px;
-      height: 75px;
-      top: -10px;
-      right: -80px; }
   .introSection h4 {
     margin-bottom: 15px; }
   .introRows {
@@ -497,50 +496,69 @@ footer {
       margin: 20px 0; }
     .introRows p:nth-of-type(2) {
       margin: 0; }
+  .down {
+    top: 300px; }
   .searchSection .countryTable,
   .searchSection .vulnerableGroupTable {
     padding: 5px;
-    grid-gap: 0; } }
+    grid-gap: 0; }
+  .results {
+    padding: 0; } }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  header h3 {
+    font-size: 18px;
+    font-size: 1.8rem;
+    font-family: 'Oswald', sans-serif;
+    margin: 12px 0 7px 0; }
   .headerList li {
-    font-size: 13.5px;
-    font-size: 1.35rem;
-    font-family: 'Cabin', sans-serif; }
-  header .title h1 {
-    font-size: 25px;
-    font-size: 2.5rem;
-    font-family: 'Cabin', sans-serif;
-    padding: 15px 0 0 0;
-    margin-top: 10px; }
-  header .title .fa-parachute-box {
     font-size: 20px;
-    right: -45px;
-    top: -15px; }
-  header .title .earthIcon {
-    width: 50px;
-    height: 50px;
-    right: -55px;
-    top: -5px; }
-  .introSection h4 {
-    margin: 0; }
-  .introSection .down {
-    margin: 0px; }
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif; }
+  .headerList a {
+    border: none; }
+    .headerList a:hover {
+      border: none; }
+  .infoContainer {
+    padding-top: 1px;
+    flex-direction: column;
+    position: relative; }
+    .infoContainer .infoWhat {
+      padding-bottom: 20px; }
+    .infoContainer .info {
+      width: 100%;
+      margin: 0; }
+  .down {
+    margin-top: 15px;
+    position: relative;
+    top: 0; }
+    .down a {
+      font-size: 13px; }
   .introSection h4,
   .searchSection h4,
   .aboutSection h4,
   .resourcesSection h4 {
-    font-size: 16px;
-    font-size: 1.6rem;
-    font-family: 'Cabin', sans-serif; }
+    font-size: 23.5px;
+    font-size: 2.35rem;
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: 0; }
   .introSection p,
   .searchSection p,
   .aboutSection p,
   .resourcesSection p {
-    font-size: 12px;
-    font-size: 1.2rem;
-    font-family: 'Varela', sans-serif; }
+    font-size: 13px;
+    font-size: 1.3rem;
+    font-family: 'Merriweather Sans', sans-serif; }
+  button {
+    font-size: 16px; }
+  .countriesButton,
+  .vulnerableGroupButton {
+    width: 49.5%;
+    padding: 10px 0; }
+  .submitSearch,
+  .readMore {
+    font-size: 13px; }
   .searchSection .countryTable {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
   .searchSection .vulnerableGroupTable {
@@ -554,62 +572,92 @@ footer {
     .resourcesSection li {
       font-size: 12.5px;
       font-size: 1.25rem;
-      font-family: 'Cabin', sans-serif; }
+      font-family: 'Oswald', sans-serif; }
+  .results h6 {
+    font-size: 13.5px; }
+  .results h5 {
+    font-size: 14.5px; }
+  .results h4 {
+    font-size: 15px; }
+  .results p {
+    font-size: 12px; }
+  .results .readMore {
+    margin-top: 12px; }
+  .aboutSection {
+    padding: 30px 0; }
+    .aboutSection h4 {
+      margin-bottom: 10px;
+      font-size: 16px; }
+  .resourcesSection {
+    padding: 10px 0; }
+    .resourcesSection h4 {
+      font-size: 16px; }
+    .resourcesSection li {
+      font-family: 'Merriweather Sans', sans-serif; }
   footer p {
     font-size: 10.5px;
     font-size: 1.05rem;
-    font-family: 'Varela', sans-serif; }
+    font-family: 'Merriweather Sans', sans-serif; }
   footer a {
     font-size: 12.5px; } }
 
 .wrapper {
   max-width: 1280px;
-  width: 80%;
+  width: 90%;
   margin: 0 auto; }
 
 html {
   font-size: 62.5%;
-  color: #333333; }
+  color: black; }
 
 h1 {
-  font-size: 45px;
-  font-size: 4.5rem;
-  font-family: 'Cabin', sans-serif;
+  font-size: 50px;
+  font-size: 5rem;
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  font-weight: 700; }
+  font-weight: 500; }
 
 h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-family: 'Cabin', sans-serif;
+  font-size: 25px;
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
-  color: #D2113A; }
+  font-weight: 400;
+  color: orange;
+  margin: 15px 0; }
 
 h4 {
-  font-size: 23.5px;
-  font-size: 2.35rem;
-  font-family: 'Cabin', sans-serif;
+  font-size: 28px;
+  font-size: 2.8rem;
+  font-family: 'Oswald', sans-serif;
   color: black;
-  text-align: center; }
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: 400;
+  margin: 0 0 15px 0; }
 
 ul {
   padding-left: 0; }
 
 li {
   list-style: none;
-  font-size: 15px;
-  font-size: 1.5rem;
-  font-family: 'Cabin', sans-serif; }
+  font-size: 13px;
+  font-size: 1.3rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-weight: 300; }
 
 a {
   text-decoration: none;
-  color: #333333; }
+  color: orange;
+  transition: 0.3s ease-in-out; }
 
 p {
-  font-size: 14.5px;
-  font-size: 1.45rem;
-  font-family: 'Varela', sans-serif;
-  line-height: 1.6; }
+  font-size: 16px;
+  font-size: 1.6rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  line-height: 1.6;
+  font-weight: 400; }
 
 .highlight {
   font-weight: 700; }

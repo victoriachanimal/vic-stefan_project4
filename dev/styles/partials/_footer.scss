@@ -5,32 +5,15 @@ footer {
     padding: 1px 0;
 
     p {
-        color: $thirdColor;
-        padding: 0 25px;
-    }
-
-    a {
-        color: $accentColor;
-        font-size: 20px;
-        padding: 0 10px;
-
-        &:hover {
-           color: lighten($accentColor, 20);
-           transition: color 0.3s;
-        }
+        font-size: 1.25rem;
+        color: white;
     }
 }
 
-.footerInfo {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footerSocial {
-    display: flex;
-    flex-direction: row;
-    padding: 0 25px;
-}
+// .footerInfo {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     align-items: center;
+// }
 

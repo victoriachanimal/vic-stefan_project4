@@ -3,7 +3,12 @@
 
 // About Page styles (about.html)
 .aboutSection {
-    padding-bottom: 60px;
+   padding: 60px 0;
+
+   p {
+       font-weight: 300;
+       @include secondaryFont(15);
+   }
 
     p:last-child {
         margin-top: 35px;
@@ -28,9 +33,12 @@
     li {
         list-style: disc;
         line-height: 2.5;
+        margin-left: 15px;
     }
 
     a {
+        color: #C4A444;
+    
         &:hover {
             color: lighten(grey, 10);
             transition: color 0.3s;
@@ -38,10 +46,4 @@
     }
 }
 
-.resourcesFooter {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 1px;
-}
+

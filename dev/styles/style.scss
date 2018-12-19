@@ -1,21 +1,21 @@
 // GLOBAL STYLES
 // variables
-$primaryColor: #333333;
-$secondaryColor: black;
-$thirdColor: #EBEBEB; 
-$accentColor: #D2113A;
+$primaryColor: black;
+$secondaryColor: orange;
+$accentColor: #FEE94E;
+
 
 // mixins
 @mixin primaryFont($fontSize) {
     font-size: $fontSize * 1px;
     font-size: ($fontSize / 10) * 1rem;
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Oswald', sans-serif;
 } 
 
 @mixin secondaryFont($fontSize) {
     font-size: $fontSize * 1px;
     font-size: ($fontSize / 10) * 1rem;
-    font-family: 'Varela', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 // Setup styles
@@ -38,9 +38,11 @@ $accentColor: #D2113A;
 
 
 // general styles
+
+
 .wrapper {
     max-width: 1280px;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -51,21 +53,28 @@ html {
 }
 
 h1 {
-    @include primaryFont(45);
+    @include primaryFont(50);
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 h3 {
-    @include primaryFont(18);
+    @include primaryFont(25);
     text-transform: uppercase;
-    color: $accentColor;
+    font-weight: 400;
+    color: $secondaryColor;
+    margin: 15px 0;
 }
 
 h4 {
-    @include primaryFont(23.5);
-    color: $secondaryColor;
+    @include primaryFont(28);
+    color: black;
+    text-transform: uppercase;
+    // border-bottom: 2px solid $accentColor;
+    display: inline-block;
     text-align: center;
+    font-weight: 400;
+    margin: 0 0 15px 0;
 }
 
 ul {
@@ -74,17 +83,20 @@ ul {
 
 li {
     list-style: none;
-    @include primaryFont(15);
+    @include secondaryFont(13);
+    font-weight: 300;
 }
 
 a {
     text-decoration: none;
-    color: $primaryColor;
+    color: $secondaryColor;
+    transition: 0.3s ease-in-out;
 }
 
 p {
-    @include secondaryFont(14.5);
+    @include secondaryFont(16);
     line-height: 1.6;
+    font-weight: 400;
 }
 
 .highlight {
