@@ -146,18 +146,24 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   flex-direction: row; }
   .headerList #aboutIcon,
   .headerList #homeIcon {
+    transition: 0.3s ease-in-out all; }
+  .headerList #aboutIcon {
     font-size: 20px;
     font-size: 2rem;
     font-family: 'Oswald', sans-serif;
     border: 1px solid orange;
     padding: 0px 8px;
     display: inline-block; }
-    .headerList #aboutIcon:hover,
-    .headerList #homeIcon:hover {
+    .headerList #aboutIcon:hover {
       color: #ffc966;
       border: 1px solid #ffc966; }
   .headerList #homeIcon {
-    padding: 2.5px 7px; }
+    padding: 0px 8px;
+    font-size: 23px;
+    font-size: 2.3rem;
+    font-family: 'Oswald', sans-serif; }
+    .headerList #homeIcon:hover {
+      color: #ffc966; }
 
 .introSection {
   background: url(geometricEarth.png);
@@ -513,8 +519,8 @@ footer {
 /* Landscape phones and down */
 @media (max-width: 480px) {
   header h3 {
-    font-size: 18px;
-    font-size: 1.8rem;
+    font-size: 20px;
+    font-size: 2rem;
     font-family: 'Oswald', sans-serif;
     margin: 12px 0 7px 0; }
   .headerList li {
