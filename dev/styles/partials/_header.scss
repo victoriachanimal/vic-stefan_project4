@@ -17,12 +17,10 @@
     display: flex;
     flex-direction: row;
 
-    li {
-        // padding: 16px 12px 12px 12px;
-        @include primaryFont(25);
-    }
 
-    a {
+    #aboutIcon,
+    #homeIcon {
+        @include primaryFont(20);
         border: 1px solid $secondaryColor;
         // border-radius: 20px;
         padding: 0px 8px;
@@ -32,6 +30,10 @@
             color: lighten($secondaryColor, 20);
             border: 1px solid lighten($secondaryColor, 20);
         }
+    }
+
+    #homeIcon {
+        padding: 2.5px 7px;
     }
 }
 

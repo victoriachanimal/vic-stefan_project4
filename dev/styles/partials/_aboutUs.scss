@@ -17,10 +17,10 @@
 
 #reliefWeb,
 .developers {
-    color: grey;
+    color: #C4A444;
 
     &:hover {
-        color: lighten(grey, 10);
+        color: lighten(#C4A444, 20);
         transition: color 0.3s;
     }
 }
@@ -40,7 +40,7 @@
         color: #C4A444;
     
         &:hover {
-            color: lighten(grey, 10);
+            color: lighten(#C4A444, 20);
             transition: color 0.3s;
         }
     }

@@ -144,17 +144,20 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
 .headerList {
   display: flex;
   flex-direction: row; }
-  .headerList li {
-    font-size: 25px;
-    font-size: 2.5rem;
-    font-family: 'Oswald', sans-serif; }
-  .headerList a {
+  .headerList #aboutIcon,
+  .headerList #homeIcon {
+    font-size: 20px;
+    font-size: 2rem;
+    font-family: 'Oswald', sans-serif;
     border: 1px solid orange;
     padding: 0px 8px;
     display: inline-block; }
-    .headerList a:hover {
+    .headerList #aboutIcon:hover,
+    .headerList #homeIcon:hover {
       color: #ffc966;
       border: 1px solid #ffc966; }
+  .headerList #homeIcon {
+    padding: 2.5px 7px; }
 
 .introSection {
   background: url(geometricEarth.png);
@@ -461,10 +464,10 @@ button {
 
 #reliefWeb,
 .developers {
-  color: grey; }
+  color: #C4A444; }
   #reliefWeb:hover,
   .developers:hover {
-    color: #9a9a9a;
+    color: #dcca92;
     transition: color 0.3s; }
 
 .resourcesSection {
@@ -476,7 +479,7 @@ button {
   .resourcesSection a {
     color: #C4A444; }
     .resourcesSection a:hover {
-      color: #9a9a9a;
+      color: #dcca92;
       transition: color 0.3s; }
 
 footer {
@@ -484,7 +487,8 @@ footer {
   padding: 1px 0; }
   footer p {
     font-size: 1.25rem;
-    color: white; }
+    color: white;
+    font-weight: 300; }
 
 /* Landscape Phone to Portrait Tablet */
 @media (max-width: 760px) {
@@ -517,9 +521,11 @@ footer {
     font-size: 20px;
     font-size: 2rem;
     font-family: 'Oswald', sans-serif; }
-  .headerList a {
+  .headerList #aboutIcon,
+  .headerList #homeIcon {
     border: none; }
-    .headerList a:hover {
+    .headerList #aboutIcon:hover,
+    .headerList #homeIcon:hover {
       border: none; }
   .infoContainer {
     padding-top: 25px;
